@@ -1,0 +1,26 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           TypeRue
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          type_rue
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Liste des types de rues
+      filter:  ~
+      form:    ~
+      edit:
+        title: Modification du type de rue "%%libelle%%"
+      new:
+        title: Nouveau type de rue
+      config:
+

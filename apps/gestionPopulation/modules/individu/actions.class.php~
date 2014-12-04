@@ -1,0 +1,767 @@
+<?php
+
+/**
+ * individu actions.
+ *
+ * @package    population
+ * @subpackage individu
+ * @author     Flament Guillaume
+ * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
+ */
+class individuActions extends sfActions {
+
+    public function executeIndex(sfWebRequest $request) {
+        $this->setCurrentPageToUser();
+
+        // Cration du pager avec la classe à utiliser et le nombre d'éléments à afficher par pages
+        $this->individusPager = new sfDoctrinePager('Individu', sfConfig::get('app_params_nb_to_display_per_page', 12));
+
+        // Critère de tri
+        if ($this->getRequestParameter("tri")){
+            $this->tri = $this->getRequestParameter("tri");
+            $this->ord = $this->getRequestParameter("ord");
+        }
+        
+        
+        // Filtre sur les adresses
+        if ($this->getRequestParameter("adr")) {
+
+            $q = Doctrine_Core::getTable('Individu')->getIndividusByAdresse($this->getRequestParameter("adr"));
+
+            //Récupération de l'adresse correspondante à l'id passé en paramètre
+            $adresse = Doctrine_Core::getTable('Adresse')
+                            ->createQuery('c')
+                            ->where('id = ?', $this->getRequestParameter("adr"))
+                            ->execute();
+
+            $this->adresse = $adresse->getFirst();
+            
+        } else {
+            
+            // Définition de la requète à utiliser
+
+            if(isset($this->tri)){
+                $q = Doctrine_Core::getTable('Individu')->getIndividusSortedBy($this->tri,$this->ord);
+            } else {
+                $q = Doctrine_Core::getTable('Individu')->getIndividusSortedBy("id");
+            }   
+        }
+
+        $this->individusPager->setQuery($q);
+
+        // Page à afficher - Affichage de la première si pas de param page
+        $this->individusPager->setPage($request->getParameter('page', 1));
+
+        // Initialisation du pager
+        $this->individusPager->init();
+
+        // Requete de base générée par symfony
+        /* $this->individus = Doctrine_Core::getTable('Individu')
+          ->createQuery('a')
+          ->limit(100)
+          ->execute(); */
+        
+    }
+
+    public function executeShow(sfWebRequest $request) {
+        $this->setCurrentPageToUser();
+        $this->individu = Doctrine_Core::getTable('Individu')->find(array($request->getParameter('id')));
+        $this->forward404Unless($this->individu);
+    }
+
+    public function executeNew(sfWebRequest $request) {
+
+        $this->form = new IndividuForm();
+    }
+
+    public function executeCreate(sfWebRequest $request) {
+        $this->forward404Unless($request->isMethod(sfRequest::POST));
+
+        $this->form = new IndividuForm();
+
+        $this->processForm($request, $this->form);
+
+        $this->setTemplate('new');
+    }
+
+    public function executeEdit(sfWebRequest $request) {
+        $this->forward404Unless($individu = Doctrine_Core::getTable('Individu')->find(array($request->getParameter('id'))), sprintf('Object individu does not exist (%s).', $request->getParameter('id')));
+        $this->form = new IndividuForm($individu);
+        $this->form->setWidget('idFamille', new sfWidgetFormInputHidden());
+        
+        //$this->form->getWidget('idFamille')->setAttribute('disabled', 'disabled');
+    }
+
+    public function executeUpdate(sfWebRequest $request) {
+        $this->forward404Unless($request->isMethod(sfRequest::POST) || $request->isMethod(sfRequest::PUT));
+        $this->forward404Unless($individu = Doctrine_Core::getTable('Individu')->find(array($request->getParameter('id'))), sprintf('Object individu does not exist (%s).', $request->getParameter('id')));
+        $this->form = new IndividuForm($individu);
+
+                
+        $this->processForm($request, $this->form);
+
+        $this->setTemplate('edit');
+    }
+
+    public function executeDelete(sfWebRequest $request) {
+        $request->checkCSRFProtection();
+
+        $this->forward404Unless($individu = Doctrine_Core::getTable('Individu')->find(array($request->getParameter('id'))), sprintf('Object individu does not exist (%s).', $request->getParameter('id')));
+        $individu->delete();
+
+        $this->redirect('individu/index');
+    }
+
+    protected function processForm(sfWebRequest $request, sfForm $form) {
+        $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+        if ($form->isValid()) {
+
+            if ($form->getObject()->isNew()) {
+                $this->getUser()->setFlash('lastAction', 'Individu créé avec succès');
+            } else {
+                $this->getUser()->setFlash('lastAction', 'Individu modifiée avec succès');
+            }
+            
+            $individu = $form->save();
+            
+            // Définit le nom d'usage identique au nom de naissance si il n'est pas renseigné
+            if ($individu->getNomUsage()=="") {
+                $individu->setNomUsage($individu->getNomNaissance());
+                $individu->save();
+            }
+            
+            // Définit la profession à 'Inconnue' si elle n'est pas renseignée
+            if ($individu->getProfession()=="") {
+                $individu->setProfession("Inconnue");
+                $individu->save();
+            }
+            
+            // Définit la date de naissance à 'Inconnue' si elle n'est pas renseignée
+            if ($individu->getDateNaissance()=="") {
+                $individu->setDateNaissance("2038-01-01");
+                $individu->save();
+            }
+            
+
+            
+            $this->redirect('individu/show?id=' . $individu->getId());
+        }
+    }
+
+    public function setCurrentPageToUser() {
+        // Définit l'url de la page courante à l'utilisateur afin de pouvoir rediriger celui-ci vers la page en question après login
+        $this->getUser()->setAttribute('module', $this->moduleName);
+        $this->getUser()->setAttribute('action', $this->actionName);
+        $this->getUser()->setAttribute('param', $this->getRequestParameter('id'));
+    }
+
+    public function executeSearch(sfWebRequest $request) {
+        // Création et affichage du formulaire de recherche
+        $this->form = new SearchIndividuForm();
+    }
+
+    
+    public function executeResult(sfWebRequest $request) {
+        // Pour que l'affichage des resultats soit correct, il faut stocker
+        // les informations saisies dans le formulaire de recherche.
+        // Pour cela on test si une pagination est necessaire
+        if (!$request->hasParameter("page")) {
+            // Si non, on recupère le parametre envoyer par le formulaire
+            $recherche = $request->getParameter("Recherche");
+            // et on stock ce parametre dans un attribut flash de l'utilisateur
+            $this->getUser()->setAttribute('RechercheEnCours', $recherche);
+        } else {
+            // Si une pagination est demandée, cela signifie que l'affichage des premiers
+            // résultats à déja été effectué, et que la requète ne contient plus les infos
+            // du formulaire de recherche. On les récupère donc dans l'attribut flash stocké dans l'utilisateur.
+            $recherche = $this->getUser()->getAttribute('RechercheEnCours');
+        }
+        
+      
+        // Initialisation de la requète avec les différents paramètres de la recherche
+        $q = $this->initQuery($recherche);
+
+    
+        
+
+        // La recherche est conservée // Utilité?
+        //$this->RechercheEnCours = $recherche;
+
+        // La recherche est conservée pour l'export éventuel des données
+        $this->getUser()->setAttribute('resultQuery', $q);
+
+        // Cration du pager avec la classe à utiliser et le nombre d'éléments à afficher par pages
+        $this->individusPager = new sfDoctrinePager('Individu', sfConfig::get('app_params_nb_to_display_per_page', 10));
+
+        // Définition de la requète à utiliser
+        $this->individusPager->setQuery($q);
+
+        // Page à afficher - Affichage de la première si pas de param page
+        $this->individusPager->setPage($request->getParameter('page', 1));
+
+        // Initialisation du pager
+        $this->individusPager->init();
+
+        // Met le résultat de la requète sous forme d'un tableau
+        $arrayResults = $this->individusPager->getResults()->toArray();
+
+
+        //On récupère le nombre de troncons concerné, qui est fixe étant donné qu'il dépendant du ou des secteur ciblé
+        $nbTronconObj = count($this->individusPager->getResults()->get(0)->getFamille()->getLogement()->getAdresse()->getRue()->getTroncons());
+            /*foreach($individu->getLogement()->getAdresse()->getRue()->getTroncons() as $unTroncon)
+            {
+                echo true;
+            }*/
+
+            //On vérifie que l'adresse lié au troncon dans le résultat de la requête est permise au sein de ce dernier
+            if(isset($this->secteurs) && count($this->secteurs) > 0)
+            {
+
+                 echo 'Taille début du tableau avant suppression : ' . count($arrayResults);
+                 echo 'Nombre de troncons en objet ' . $nbTronconObj . '<br/>';
+
+                 
+                 for($i = 0;$i < count($arrayResults);$i++)
+                 {
+                     //Initialisation : il est censé être deans le secteur à la base
+                    $presentDansSecteur = true;
+
+                    //On récupère le numéro de la rue
+                    $numeroRue = $arrayResults[$i]['Famille']['Logement']['Adresse']['numeroRue'];
+                    $nbTroncon = count($arrayResults[$i]['Famille']['Logement']['Adresse']['Rue']['Troncons']);
+                 echo 'Nombre de troncon en tableau' . $nbTroncon . '<br/>';
+                      
+                    //On parcours tout les troncons pour cette adresse dans la rue dans laquelle elle se situe (une adresse n'a qu'une rue)
+                    for($j = 0;$j < $nbTroncon;$j++)
+                    {
+                        $minImp = $arrayResults[$i]['Famille']['Logement']['Adresse']['Rue']['Troncons'][$j]['numDebutImpair'];
+                        $maxImp = $arrayResults[$i]['Famille']['Logement']['Adresse']['Rue']['Troncons'][$j]['numFinImpair'];
+                        $minPair = $arrayResults[$i]['Famille']['Logement']['Adresse']['Rue']['Troncons'][$j]['numDebutPair'];
+                        $maxPair = $arrayResults[$i]['Famille']['Logement']['Adresse']['Rue']['Troncons'][$j]['numFinPair'];
+
+                        //On vérifie si l'adresse est dans l'intervalle
+                        if(Troncon::getAdresseDisponible($numeroRue, $minImp, $maxImp, $minPair, $maxPair))
+                        {
+                            //Si c'est la cas on garde
+                            echo "Ce troncon est dans les clou !<br/>";
+                            $presentDansSecteur = true;
+                        }
+                        else
+                        {
+                            //Isnon on la vire...mais elle peut repasser à true si dans un autre troncons elle est présente
+                            echo "Ce troncon n'est pas dans les clou !<br/>";
+                            echo '<pre>';
+                            print_r($arrayResults[$i]);
+                            echo '</pre>';
+                            $presentDansSecteur = false;
+                        }
+                    }
+
+                    //S'il n'a rien à faire là on supprime ce dernier du tableau
+                    if($presentDansSecteur == false)
+                    {
+                        unset($arrayResults[$i]);
+                    }
+
+                 }
+
+                 echo 'Taille final du tableau après suppression : ' . count($arrayResults);
+            }
+        die;
+        
+    }
+    
+    public function executeRadiation(sfWebRequest $request) {
+        //$this->forward404Unless($individu = Doctrine_Core::getTable('Individu')->find(array($request->getParameter('id'))), sprintf('Object individu does not exist (%s).', $request->getParameter('id')));
+        $this->individu = Doctrine_Core::getTable('Individu')->find(array($request->getParameter('id')));
+        //$this->form = new IndividuRadiationForm($individu);
+        $this->form = new IndividuRadiationForm();
+    }
+    
+    
+    /*
+     * Cette fonction permet d'archiver un individu en fonction de son id.
+     * Il s'agit ici de la radiation, c'est à dire la suppression de la table individu
+     * et l'insertion dans la table archive avec une seule adresse (motif : décès ou départ commune)
+     */
+    public function executeArchivageRad(sfWebRequest $request) {
+        $this->individu = Doctrine_Core::getTable('Individu')->find(array($request->getParameter('id')));
+        $arch = new Archive;
+        $params = $request->getParameter("individu");
+        $arch->setMotifDepart($params["Motif radiation"]);
+        //$arch->setDateArchivage($params["Date départ"]);   TIMESTAMP CREATED AT
+        $arch->setNomNaissance($this->individu->getNomNaissance());
+        $arch->setNomUsage($this->individu->getNomUsage());
+        $arch->setPrenoms($this->individu->getPrenoms());
+        $arch->setTitre($this->individu->getTitre());
+        $arch->setSexe($this->individu->getSexe());
+        $arch->setDateNaissance($this->individu->getDateNaissance());
+        $arch->setIdVilleNaissance($this->individu->getIdVilleNaissance());
+        $arch->setSituationFamiliale($this->individu->getSituationFamiliale());
+        $arch->setDateArchivage(date('Y-m-d'));
+        $arch->setInfosComplementaires($params["Infos complémentaires"]);
+        
+        $arch->setNomRueAnt($this->individu->getFamille()->getLogement()->getAdresse()->getRue()->getNom());
+        $arch->setNumeroRueAnt($this->individu->getFamille()->getLogement()->getAdresse()->getNumeroRue());
+        $arch->setTypeRueAnt($this->individu->getFamille()->getLogement()->getAdresse()->getRue()->getTypeRue()->getLibelle());
+        $arch->setComplementNumAnt($this->individu->getFamille()->getLogement()->getAdresse()->getComplement());
+        
+        $arch->setNomRuePost("");
+        $arch->setTypeRuePost("");
+
+        // Sauvegarde dans la table archive
+        $arch->save();
+        
+        // Supression de la famille si elle ne comporte que l'individu que l'on supprime afin de libérer le logement
+        if($this->individu->getFamille()->getIndividus()->count()==1){
+            $this->individu->getFamille()->delete();
+        }
+        // Supression dans la table individu
+        $this->individu->delete();
+        
+        
+        $this->getUser()->setFlash('lastAction', 'Individu archivé avec succès');
+        
+        // Redirection vers la liste des archives
+        $this->redirect('archive/index');
+    }
+    
+    
+    public function executeMutation(sfWebRequest $request) {
+        $this->individu = Doctrine_Core::getTable('Individu')->find(array($request->getParameter('id')));
+        $this->form = new IndividuMutationForm();
+        $this->form->getWidget('Ancienne famille')->setDefault($this->individu->getIdFamille());
+        
+    }
+    
+    
+    /*
+     * Cette fonction permet d'archiver un individu en fonction de son id.
+     * Il s'agit ici de la mutation, c'est à dire le changement de famille
+     * d'un individu, ce qui entraine un archivage avec son ancienne et sa
+     * nouvelle adresse. L'individu n'est pas supprimé de la table individu
+     */
+    public function executeArchivageMut(sfWebRequest $request) {
+        $individu = Doctrine_Core::getTable('Individu')->find(array($request->getParameter('id')));
+     
+        
+          $familleOrigine=$individu->idFamille;
+          $nbPersonneAvantChangement=$individu->getFamille()->getIndividus()->count();
+
+        
+        $arch = new Archive;
+        $params = $request->getParameter("individu");
+        $arch->setMotifDepart('Mutation');
+        $arch->setNomNaissance($individu->getNomNaissance());
+        $arch->setNomUsage($individu->getNomUsage());
+        $arch->setPrenoms($individu->getPrenoms());
+        $arch->setTitre($individu->getTitre());
+        $arch->setSexe($individu->getSexe());
+        $arch->setDateNaissance($individu->getDateNaissance());
+        $arch->setIdVilleNaissance($individu->getIdVilleNaissance());
+        $arch->setSituationFamiliale($individu->getSituationFamiliale());
+        $arch->setDateArchivage(date('Y-m-d'));
+        
+        $arch->setNomRueAnt($individu->getFamille()->getLogement()->getAdresse()->getRue()->getNom());
+        $arch->setNumeroRueAnt($individu->getFamille()->getLogement()->getAdresse()->getNumeroRue());
+        $arch->setTypeRueAnt($individu->getFamille()->getLogement()->getAdresse()->getRue()->getTypeRue()->getLibelle());
+        $arch->setComplementNumAnt($individu->getFamille()->getLogement()->getAdresse()->getComplement());
+        
+        // Supression de la famille si elle ne comporte que l'individu que l'on mute afin de libérer le logement
+    /*    if($individu->getFamille()->getIndividus()->count()==1){
+            $individu->getFamille()->delete();
+        }*/
+        // Modification de la famille dans l'individu dans la table individu
+        $individu->setIdFamille($params["Nouvelle famille"]);
+        $individu->save();
+        $individu->refreshRelated();
+        
+        
+        /*Supression de la famille vide */
+        //Si avant la mutation il n'y avait plus qu'une personne dans ma famille....
+        if($nbPersonneAvantChangement==1)
+        {
+               $dql = Doctrine_Query::create()
+               ->from('famille f')
+               ->where('f.id LIKE ?',$familleOrigine);
+               $result= $dql->execute();
+               $result->delete();
+          
+        }
+ 
+        
+        $arch->setNomRuePost($individu->getFamille()->getLogement()->getAdresse()->getRue()->getNom());
+        $arch->setNumeroRuePost($individu->getFamille()->getLogement()->getAdresse()->getNumeroRue());
+        $arch->setTypeRuePost($individu->getFamille()->getLogement()->getAdresse()->getRue()->getTypeRue()->getLibelle());
+        $arch->setComplementNumPost($individu->getFamille()->getLogement()->getAdresse()->getComplement());
+        
+        // Sauvegarde dans la table archive
+        $arch->save();
+       
+        $this->getUser()->setFlash('lastAction', 'Individu muté et archivé avec succès');
+        
+        // Redirection vers la liste des archives
+        $this->redirect('archive/index');
+        
+    }
+    
+   public function executeListeSecteur(sfWebRequest $request) {
+     
+       /*
+       SELECT s.Id, s.libelle, d.libelle
+        FROM troncon t
+        JOIN secteur s
+        JOIN decoupage d
+        WHERE t.idsecteur = s.id
+        AND s.iddecoupage = d.id
+        AND t.idrue =1  */
+       
+       
+       if(($request->getParameter('numrue')%2)==0)
+       {
+       
+       
+                $this->requete = Doctrine_Query::create() // On crée une requête.
+                   ->select("t.id , s.Id as idsecteur, s.libelle as libsecteur, d.libelle as libdecoupage,d.id as iddecoupage")
+		   ->from('troncon t') 
+                   ->innerJoin("t.Secteur s")
+                   ->innerJoin("s.Decoupage d")
+                   ->where("t.idrue=?",$request->getParameter('rue'))
+                   ->andwhere("t.numdebutpair<=?",$request->getParameter('numrue'))
+                   ->andwhere("t.numfinpair>=?",$request->getParameter('numrue'))
+                   ->execute(); // On exécute la requête.
+       }
+     else
+     {
+                  $this->requete = Doctrine_Query::create() // On crée une requête.
+                   ->select("t.id , s.Id as idsecteur, s.libelle as libsecteur, d.libelle as libdecoupage,d.id as iddecoupage")
+		   ->from('troncon t') 
+                   ->innerJoin("t.Secteur s")
+                   ->innerJoin("s.Decoupage d")
+                   ->where("t.idrue=?",$request->getParameter('rue'))
+                   ->andwhere("t.numdebutimpair<=?",$request->getParameter('numrue'))
+                   ->andwhere("t.numfinimpair>=?",$request->getParameter('numrue'))
+                   ->execute(); // On exécute la requête.
+      }
+               
+     
+
+    }
+    
+    
+    
+    
+    
+    
+    /*     * ************************************************************************************************************** */
+    /*     * **************************** C O D E   P O U R   L' A U T O C O M P L E T I O N ****************************** */
+    /*     * ************************************************************************************************************** */
+    /* Ajax call
+     * @param sfWebRequest $request
+     * @return Json array of matching City objects converted to string
+     */
+
+    public function executeGetVilles(sfWebRequest $request) {
+        $q = $request->getParameter('q');
+
+        $limit = $request->getParameter('limit');
+
+        $citys = Doctrine::getTable('ville')->createQuery("c")
+                        ->where('c.ville LIKE ?', '%' . $q . '%')
+                        ->orWhere('c.cp LIKE ?', '%' . $q . '%')
+                        ->orderBy('LENGTH(c.ville)')
+                        //->limit($limit)   // est limité à 10 par défaut
+                        ->execute();
+
+        $list = array();
+        foreach ($citys as $city) {
+            $list[$city->getId()] = sprintf('%s (%s)', $city->getVille(), $city->getDepartement());
+        }
+
+        return $this->renderText(json_encode($list));
+    }
+
+
+    /* Ajax call
+     * @param sfWebRequest $request
+     * @return Json array of matching City objects converted to string
+     */
+
+    public function executeGetFamilles(sfWebRequest $request) {
+        $q = $request->getParameter('q');
+
+        $limit = $request->getParameter('limit');
+
+        $famillies = Doctrine::getTable('Famille')->createQuery("f")
+                        ->leftJoin('f.Logement l')
+                        ->leftJoin('l.Adresse a')
+                        ->leftJoin('a.Rue r')
+                        ->where('f.id LIKE ?', $q . '%')
+                        ->orWhere('r.motdirecteur LIKE ?', $q . '%')
+                        ->orderBy('LENGTH(f.id)')
+                        ->orderBy('f.id')
+                        //->limit($limit)   // est limité à 10 par défaut
+                        ->execute();
+
+        $list = array();
+        foreach ($famillies as $familly) {
+            $list[$familly->getId()] = sprintf('%s (%s - %s individu(s))', $familly->getId(), $familly->getLogement()->getAdresse(), $familly->getIndividus()->count());
+        }
+
+        return $this->renderText(json_encode($list));
+    }
+
+    /*     * ************************************************************************************************************** */
+    /*     * ********************** C O D E   P O U R   L' E X T R A C T I O N   D E   D O N N E E S ********************** */
+    /*     * ************************************************************************************************************** */
+
+    public function executeExportIndividus(sfWebRequest $request) {
+
+        $date = date('y-m-d');
+
+        // Execution de la requète
+        $individus = $this->initQuery($this->getUser()->getAttribute('RechercheEnCours'))->execute();
+
+        // Met le résultat de la requète sous forme d'un tableau
+        $arrayIndiv = $individus->toArray();
+
+        $i = 0;
+        foreach ($individus as $individu) {
+            $arrayIndiv[$i]["id"] = $individu->getId();
+            $arrayIndiv[$i]["nomNaissance"] = $individu->getNomNaissance();
+            $arrayIndiv[$i]["prenoms"] = $individu->getPrenoms();
+            $arrayIndiv[$i]["dateNaissance"] = date("d/m/Y", strtotime($individu->getDateNaissance()));
+            $arrayIndiv[$i]["dateArrivee"] = date("d/m/Y", strtotime($individu->getDateArrivee()));
+            $arrayIndiv[$i]["chefFamille"] = $individu->getChefFamille()==1 ? "Oui" : "Non";
+            $arrayIndiv[$i]["villeNaissance"] = $individu->getVilleNaissance();
+            $arrayIndiv[$i]["adresse"] = $individu->getAdresseComplete();
+            $i++;
+        }
+
+
+        // Création du document
+        $doc = new sfTinyDoc();
+
+        // Si le document est un ods (spreadsheet)
+        $doc->createFrom(array('extension' => 'ods'));
+        
+        // Chargement du contenu du fichier (content.xml) pour pouvoir effectuer des modifications
+        $doc->loadXml('content.xml');
+
+        // Remplissage des champs du document
+        $doc->mergeXmlBlock("block1", $arrayIndiv);
+
+        // Sauvegarde et fermeture du document
+        $doc->saveXml();
+        $doc->close();
+
+        // Envoi du document et suppression du répertoire temporaire
+        $doc->sendResponse(array('filename' => 'Extraction_Individus_' . $date . '.ods'));
+        $doc->remove();
+
+        //throw new sfStopException;
+    }
+
+
+    // Cette fonction prend en paramètre un résultat de recherche et renvoie la requète qui prend en compte les paramètres reçus
+    private function initQuery($recherche) {
+        
+        //print_r($recherche);
+        // Variables pour la requète
+        $codeFamille = $recherche["Code famille"] == "" ? "%" : $recherche["Code famille"];
+        $idIndividu = $recherche["Id individu"] == "" ? "%" : $recherche["Id individu"];
+        $numRue = $recherche["Adresse (n° rue)"] == "" ? "%" : $recherche["Adresse (n° rue)"];
+
+        $rue = $recherche["Rue"] == "" ? "" : $recherche["Rue"];
+        $secteur = $recherche["Secteur"] == "" ? "" : $recherche["Secteur"];
+        $decoupage = $recherche["Découpage"] == "" ? "" : $recherche["Découpage"];
+
+        $DNaissMin = $recherche["Date naissance min"]["day"] == "" ? "1" : $recherche["Date naissance min"]["day"];
+        $MNaissMin = $recherche["Date naissance min"]["month"] == "" ? "1" : $recherche["Date naissance min"]["month"];
+        $YNaissMin = $recherche["Date naissance min"]["year"] == "" ? "1900" : $recherche["Date naissance min"]["year"];
+        $DNaissMax = $recherche["Date naissance max"]["day"] == "" ? "1" : $recherche["Date naissance max"]["day"];
+        $MNaissMax = $recherche["Date naissance max"]["month"] == "" ? "1" : $recherche["Date naissance max"]["month"];
+        $YNaissMax = $recherche["Date naissance max"]["year"] == "" ? "2100" : $recherche["Date naissance max"]["year"];
+
+        $DArriveeMin = $recherche["Date arrivée min"]["day"] == "" ? "1" : $recherche["Date arrivée min"]["day"];
+        $MArriveeMin = $recherche["Date arrivée min"]["month"] == "" ? "1" : $recherche["Date arrivée min"]["month"];
+        $YArriveeMin = $recherche["Date arrivée min"]["year"] == "" ? "1900" : $recherche["Date arrivée min"]["year"];
+        $DArriveeMax = $recherche["Date arrivée max"]["day"]; // Initialisé à la date courante dans le formulaire
+        $MArriveeMax = $recherche["Date arrivée max"]["month"]; // Initialisé à la date courante dans le formulaire
+        $YArriveeMax = $recherche["Date arrivée max"]["year"]; // Initialisé à la date courante dans le formulaire
+
+        $dateNaissMin = $YNaissMin . "-" . $MNaissMin . "-" . $DNaissMin;
+        $dateNaissMax = $YNaissMax . "-" . $MNaissMax . "-" . $DNaissMax;
+        $dateArriveeMin = $YArriveeMin . "-" . $MArriveeMin . "-" . $DArriveeMin;
+        $dateArriveeMax = $YArriveeMax . "-" . $MArriveeMax . "-" . $DArriveeMax;
+        
+        $crietereTri = $recherche["Trier selon"] == "" ? "" : $recherche["Trier selon"];
+        $ordre = $recherche["Ordre"] == "" ? "ASC" : $recherche["Ordre"];
+
+        
+        $rues = "";
+        foreach ($rue as $cle => $valeur) {
+            if ($rues == "") {
+                $rues = $valeur;
+            } else {
+                $rues = $rues . "," . $valeur;
+            }
+        }
+
+        $secteurs = "";
+        foreach ($secteur as $cle => $valeur) {
+            if ($secteurs == "") {
+                $secteurs = $valeur;
+            } 
+            else 
+            {
+                $secteurs = $secteurs . "," . $valeur;
+            }
+        }
+
+        $decoupages = "";
+        foreach ($decoupage as $cle => $valeur) {
+            if ($decoupages == "") {
+                $decoupages = $valeur;
+            } else {
+                $decoupages = $decoupages . "," . $valeur;
+            }
+        }
+
+      // $sousRequêteGestionTronçon = "SELECT a.numeroRue FROM adresse a LEFT JOIN rue r ON a.idRue = r.id LEFT JOIN troncon t ON t.idRue = r.id WHERE ((a.numeroRue BETWEEN t.numDebutPair AND t.numFinPair) OR (a.numeroRue BETWEEN t.numDebutImpair AND t.numFinImpair) )";
+
+        // Requète sql multi critères
+        $q = Doctrine_Query::create()
+                        ->select("i.*, f.*, l.*, a.*, r.*, t.*, s.*")
+                        ->distinct()
+                        ->from("Individu i")
+                        ->leftJoin('i.Famille f')
+                        ->leftJoin('f.Logement l')
+                        ->leftJoin('l.Adresse a')
+                        ->leftJoin('a.Rue r')
+                        ->leftJoin('r.Troncons t')
+                        ->leftJoin('t.Secteur s')
+                        ->leftJoin('s.Decoupage d')
+                        ->where("i.nomnaissance LIKE ?", "%" . $recherche["Nom naissance"] . "%")
+                        ->andWhere("i.nomusage LIKE ?", "%" . $recherche["Nom usage"] . "%")
+                        ->andWhere("i.prenoms LIKE ?", "%" . $recherche["Prénoms"] . "%")
+                        ->andWhere("i.titre LIKE ?", "%" . $recherche["Titre"] . "%")
+                        ->andWhere("i.sexe LIKE ?", "%" . $recherche["Sexe"] . "%")
+                        ->andWhere("i.situationFamiliale LIKE ?", "%" . $recherche["Situation familiale"] . "%")
+                        ->andWhere("i.chefFamille LIKE ?", "%" . $recherche["Chef famille"] . "%")
+                        ->andWhere("i.profession LIKE ?", "%" . $recherche["Profession"] . "%")
+                        ->andWhere("i.ancienneVilleNaiss LIKE ?", "%" . $recherche["Ville naissance"] . "%")
+                        ->andWhere("i.id LIKE ?", $idIndividu)
+                        ->andWhere("i.idFamille LIKE ?", $codeFamille)
+                        ->andWhere("r.nom LIKE ?", "%" . $recherche["Nom rue"] . "%")
+                       // ->andWhere("a.numeroRue LIKE ?",  $numRue)
+                        //->andWhere("a.numeroRue IN (?)", $sousRequêteGestionTronçon)
+                        ->andWhere("i.dateNaissance >= ?", $dateNaissMin)
+                        ->andWhere("i.dateNaissance <= ?", $dateNaissMax)
+                        ->andWhere("i.dateArrivee >= ?", $dateArriveeMin)
+                        ->andWhere("i.datearrivee <= ?", $dateArriveeMax)
+        ;
+
+
+       
+        /*$orModule = $q->expr()->orx();
+        $orModule->add($q->expr()->between('a.numeroRue',':minPair',':maxPair'));
+        $orModule->add($q->expr()->between('a.numeroRue',':minImpair',':maxImpair'));
+
+         $q->add($xorModule)
+            ->setParameters(array('minPair' => 't.numDebutPair', 'maxPair' => 't.numFinPair', 'minImpair' => 't.numDebutImpair', 'maxImpair' => 't.numFinImpair'));*/
+         
+     //  echo $q->getSqlQuery();
+     //  die;
+
+        // Ajout des critères si au moins un élément a été sélectionné dans les listes multi choix
+        if ($rues != "") {
+            $q->andWhere("r.id IN ($rues)");
+        }
+
+        if ($secteurs != "") {
+            $q->andWhere("s.id IN ($secteurs)");
+            $this->secteurs = $secteurs;
+        }
+
+        if ($decoupages != "") {
+            $q->andWhere("d.id IN ($decoupages)");
+        }
+        
+        if ($crietereTri != "") {
+            $q->orderBy($crietereTri . " " .$ordre);
+        }
+                       
+     
+ 
+        
+     
+      /*récupération du nombre de famille et et du nombre de logement */
+        
+               $q2 = Doctrine_Query::create()
+                        ->select("count(distinct i.idfamille) AS nb_famille,count(distinct l.id) as nb_logement")
+                        ->distinct()
+                        ->from("Individu i")
+                        ->leftJoin('i.Famille f')
+                        ->leftjoin('f.Logement l')
+                        ->leftjoin('l.Adresse a')
+                        ->leftjoin('a.Rue r')
+                        ->leftjoin('r.Troncons t')
+                        ->leftjoin('t.Secteur s')
+                        ->leftjoin('s.Decoupage d')
+                        ->where("i.nomnaissance LIKE ?", "%" . $recherche["Nom naissance"] . "%")
+                        ->andWhere("i.nomusage LIKE ?", "%" . $recherche["Nom usage"] . "%")
+                        ->andWhere("i.prenoms LIKE ?", "%" . $recherche["Prénoms"] . "%")
+                        ->andWhere("i.titre LIKE ?", "%" . $recherche["Titre"] . "%")
+                        ->andWhere("i.sexe LIKE ?", "%" . $recherche["Sexe"] . "%")
+                        ->andWhere("i.situationFamiliale LIKE ?", "%" . $recherche["Situation familiale"] . "%")
+                        ->andWhere("i.chefFamille LIKE ?", "%" . $recherche["Chef famille"] . "%")
+                        ->andWhere("i.profession LIKE ?", "%" . $recherche["Profession"] . "%")
+                        ->andWhere("i.ancienneVilleNaiss LIKE ?", "%" . $recherche["Ville naissance"] . "%")
+                        ->andWhere("i.id LIKE ?", $idIndividu)
+                        ->andWhere("i.idFamille LIKE ?", $codeFamille)
+                        ->andWhere("r.nom LIKE ?", "%" . $recherche["Nom rue"] . "%")
+                        ->andWhere("a.numeroRue LIKE ?",  $numRue)
+                        ->andWhere("i.dateNaissance >= ?", $dateNaissMin)
+                        ->andWhere("i.dateNaissance <= ?", $dateNaissMax)
+                        ->andWhere("i.dateArrivee >= ?", $dateArriveeMin);
+               
+               
+
+               
+                   if ($rues != "") {
+                    $q2->andWhere("r.id IN ($rues)");
+                }
+
+                if ($secteurs != "") {
+                    $q2->andWhere("s.id IN ($secteurs)");
+                }
+
+                if ($decoupages != "") {
+                    $q2->andWhere("d.id IN ($decoupages)");
+                }
+
+                if ($crietereTri != "") {
+                    $q2->orderBy($crietereTri . " " .$ordre);
+                }
+
+
+               
+               
+               
+                        $result = $q2->fetchOne();
+               
+                         $this->nbFamille=$result->getNbFamille();
+                        $this->nbLogement=$result->getNbLogement();
+      
+               
+        /*--------------------------------------------------------*/
+        
+        
+        
+        
+        
+        return $q;
+    }
+
+}

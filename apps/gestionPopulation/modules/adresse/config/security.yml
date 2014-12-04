@@ -1,0 +1,26 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/08-Security
+
+all:
+  is_secure: true
+
+index:
+  is_secure: false
+
+show:
+  is_secure: false
+
+edit:
+  is_secure: true
+  credentials: Admin
+
+new:
+  is_secure: true
+  credentials: Admin
+  
+search:
+  is_secure: false
+  
+
+result:
+  is_secure: false

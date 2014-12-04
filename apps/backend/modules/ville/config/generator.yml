@@ -1,0 +1,26 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Ville
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          ville
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Liste des villes
+      filter:  ~
+      form:    ~
+      edit:
+        title: Modification de la ville "%%ville%%"
+      new:
+        title: Nouvelle ville
+      config:
+

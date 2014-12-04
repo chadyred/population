@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        Application population
+    #description:  symfony project
+    #keywords:     symfony, project
+    language:     fr
+    #robots:       index, follow
+
+  stylesheets:    [admin.css]
+
+  javascripts:    [slidetoggle.js, javascript.js, jquery-1.7.2.min.js, jquery-ui-1.8.20.custom.min.js, uidatepicker-fr.js, encryption/md5.js, encryption/sha1.js]
+
+  has_layout:     true
+  layout:         layout

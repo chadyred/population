@@ -1,0 +1,173 @@
+# config/doctrine/schema.yml
+Individu:
+  #actAs:
+    #Timestampable:
+      #created:            { name: dateArrivee }
+      #updated:            { disabled: true }
+  columns:
+    #idInd:                { type: integer(4), primary: true, notnull: true, autoincrement: true }
+    nomNaissance:         { type: string(60), notnull: true }
+    nomUsage:             { type: string(60), notnull: false }
+    prenoms:              { type: string(100), notnull: true }
+    titre:                { type: string(4), notnull: true }
+    sexe:                 { type: enum, values: ['Masculin','Féminin'], notnull : true }
+    dateNaissance:        { type: date, notnull: false }
+    #idVilleNaissance fait référence à l'id de VilleFrance
+    idVilleNaissance:     { type: integer, notnull: false }
+    ancienneVilleNaiss:   { type: string(250), notnull: false }
+    situationFamiliale:   { type: enum, values: ['Célibataire','Marié(e)','Pacsé(e)','Veuf(ve)', Divorcé(e), Séparé(e), 'Vie maritale', 'Inconnue'], notnull : true }
+    chefFamille:          { type: boolean, notnull : true }
+    profession:           { type: string(75), notnull: false }
+    email:                { type: string(75), notnull: false }
+    dateArrivee:          { type: date, notnull: false }
+    #idFamille fait référence à l'id de Famille
+    idFamille:            { type: integer, notnull: false }
+  relations:
+    Ville:                { local: idVilleNaissance, foreign: id, alias: villeNaissance, foreignAlias: Individus, type: one, foreignType: many }
+    #Famille:              { onDelete: CASCADE, local: idFamille, foreign: idFam, type: one, foreignType: many }
+    Famille:              { onDelete: CASCADE, local: idFamille, foreign: id, type: one, foreignAlias: Individus, foreignType: many }
+
+
+Famille:
+  columns:
+    #idFam:                { type: integer, primary: true, notnull: true, autoincrement: true }
+    idLogement:           { type: integer, notnull: false}
+    infosComplementaires: { type: string(75), notnull: false }
+  relations:
+    #Logement:             { local: idLogement, foreign: idLog, type: one, foreignType: many }
+    Logement:             { local: idLogement, foreign: id, foreignAlias: Familles, type: one, foreignType: many }
+
+Logement:
+  columns:
+    #idLog:                { type: integer, primary: true, notnull: true, autoincrement: true }
+    typeBatiment:         { type: enum, values: ['Maison individuelle','Maison jumelée','Immeuble','Hotel','Chateau','Bureaux','Caravane', 'Hangar','Centre culturel','Municipal','Autre','Inconnu'], default: 'Inconnu', notnull : true }
+    typeComplement:       { type: enum, values: ['','Allée','Batiment','Escalier','Couloir','Porte','Zone','Secteur'], default: '', notnull : false }
+    valeurComplement:     { type: string(30), notnull: false }
+    infosComplementaires: { type: string(75), notnull: false }
+    idAdresse:            { type: integer, notnull: true }
+  relations:
+    #Adresse:              { onDelete: CASCADE, local: idAdresse, foreign: idAdr, type: one, foreignType: many }
+    Adresse:              { onDelete: CASCADE, local: idAdresse, foreign: id, foreignAlias: Logements, type: one, foreignType: many }
+
+Adresse:
+  columns:
+    #idAdr:                { type: integer, primary: true, notnull: true, autoincrement: true }
+    numeroRue:            { type: integer, notnull: true}
+    complement:           { type: string(10), notnull: false}
+    nbLogementsMax:       { type: integer, notnull: true}
+    infosComplementaires: { type: string(75), notnull: false }
+    idRue:                { type: integer, notnull: true}
+  relations:
+    Rue:                  { onDelete: CASCADE, local: idRue, foreign: id, foreignAlias: Adresses, type: one, foreignType: many }
+
+Rue:
+  columns:
+    #idRue:                { type: integer, primary: true, notnull: true, autoincrement: true }
+    codeRivoli:           { type: string(8), notnull: true, unique: true }
+    nom:                  { type: string(150), notnull: true }
+    motDirecteur:         { type: string(50), notnull: true }
+    premierNumero:        { type: integer, notnull: true }
+    dernierNumero:        { type: integer, notnull: true }
+    idTypeRue:            { type: integer, notnull: true }
+  relations:
+    #TypeRue:              { onDelete: CASCADE, local: idTypeRue, foreign: idTyp, type: one, foreignType: many }
+    TypeRue:              { onDelete: CASCADE, local: idTypeRue, foreign: id, foreignAlias: Rues, type: one, foreignType: many }
+
+TypeRue:
+  columns:
+    #idTyp:                { type: integer, primary: true, notnull: true, autoincrement: true }
+    libelle:              { type: string(50), notnull: true }
+
+Secteur:
+  columns:
+    #idSec:                { type: integer, primary: true, notnull: true, autoincrement: true }
+    libelle:              { type: string(50), notnull: true }
+    idDecoupage:          { type: integer, notnull: true }
+  relations:
+    #Decoupage:            { onDelete: CASCADE, local: idDecoupage, foreign: idDec, type: one, foreignType: many }
+    Decoupage:            { onDelete: CASCADE, local: idDecoupage, foreign: id, foreignAlias: Secteurs, type: one, foreignType: many }
+
+Decoupage:
+  columns:
+    #idDec:                { type: integer, primary: true, notnull: true, autoincrement: true }
+    libelle:              { type: string(50), notnull: true }
+
+# Troncons remplace la table association RUE-SECTEUR de l'ancienne application
+Troncon:
+  columns:
+    #idTro:                { type: integer, primary: true, notnull: true, autoincrement: true }
+    idRue:                { type: integer, notnull: true}
+    idSecteur:            { type: integer, notnull: true}
+    numDebutPair:         { type: integer, notnull: true}
+    numDebutImpair:       { type: integer, notnull: true}
+    numFinPair:           { type: integer, notnull: true}
+    numFinImpair:         { type: integer, notnull: true}
+    infosComplementaires: { type: string(75), notnull: false }
+  relations:
+    #Rue:                  { onDelete: CASCADE, local: idRue, foreign: idRue, type: many, foreignType: many, class: Rue, owningSide: true}
+    #Secteur:              { onDelete: CASCADE, local: idSecteur, foreign: idSec, type: many, foreignType: many }
+    Rue:                  { onDelete: CASCADE, local: idRue, foreign: id, alias: Rue, foreignAlias: Troncons, type: one, foreignType: many }
+    Secteur:              { onDelete: CASCADE, local: idSecteur, foreign: id, alias: Secteur, foreignAlias: Troncons, type: one, foreignType: many }
+
+
+Utilisateur:
+  columns:
+    #idUti:                { type: integer, primary: true, notnull: true, autoincrement: true }
+    login:                { type: string(30), notnull: true }
+    password:             { type: string(50), notnull: true }
+    nom:                  { type: string(50), notnull: true }
+    prenom:               { type: string(50), notnull: true }
+    etatCompte:           { type: enum, values: ['En attente','Activé','Désactivé','Désactivé temporairement','A supprimer'], default: 'En attente', notnull : true }
+    typeUtilisateur:      { type: enum, values: ['User','Admin','SuperAdmin'], notnull : true}
+    #Seul le super admin pourra créer des utilisateurs
+
+
+Archive:
+  #actAs:
+    #Timestampable:
+      #created:            { name: dateArchivage }
+      #updated:            { disabled: true }
+  columns:
+    #idArc:                { type: integer, primary: true, notnull: true, autoincrement: true }
+    nomNaissance:         { type: string(60), notnull: true }
+    nomUsage:             { type: string(60), notnull: true }
+    prenoms:              { type: string(100), notnull: true }
+    titre:                { type: string(4), notnull: true }
+    sexe:                 { type: enum, values: ['Masculin','Féminin'], notnull : true }
+    dateNaissance:        { type: date, notnull: false }
+    #idVilleNaissance fait référence à l'id de VilleFrance
+    idVilleNaissance:     { type: integer, notnull: false }
+    situationFamiliale:   { type: enum, values: ['Célibataire','Marié(e)','Pacsé(e)','Veuf(ve)','Inconnu'], notnull : true }
+
+    #Infos concernant sa situation antérieure au départ
+    nomRueAnt:            { type: string(50), notnull: true }
+    typeRueAnt:           { type: string(50), notnull: true }
+    numeroRueAnt:         { type: integer, notnull: true }
+    complementNumAnt:     { type: string(10), notnull: false }
+
+    #Infos concernant sa situation postérieure au départ
+    nomRuePost:           { type: string(50), notnull: false }
+    typeRuePost:          { type: string(50), notnull: false }
+    numeroRuePost:        { type: integer, notnull: false }
+    complementNumPost:    { type: string(10), notnull: false }
+    
+    dateArchivage:        { type: date, notnull: true }
+    motifDepart:          { type: enum, values: ['Mutation','Départ commune', 'Décès', 'Inconnu'], notnull : true }
+    infosComplementaires: { type: string(100), notnull: false }
+    
+  relations:
+    Ville:                { local: idVilleNaissance, foreign: id, alias: villeNaissance, foreignAlias: Archives, type: one, foreignType: many }
+
+
+Ville:
+  options:
+    symfony:
+      form: true
+      filter: true
+  columns:
+    #idVil:                { type: integer, primary: true, notnull: true, autoincrement: true }
+    CP:                   { type: string(5), notnull: true, charset: utf8 }
+    Ville:                { type: string(50), notnull: true, charset: utf8 }
+    Region:               { type: string(40), notnull: true, charset: utf8 }
+    Departement:          { type: string(60), notnull: true, charset: utf8 }
+    Pays:                 { type: string(40), notnull: false, charset: utf8 }

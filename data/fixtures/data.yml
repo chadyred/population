@@ -1,0 +1,5191 @@
+Decoupage:
+  Decoupage_1:
+    libelle: Quartier
+Troncon:
+  Troncon_1:
+    idRue: '1'
+    idSecteur: '1'
+    numDebutPair: '1'
+    numDebutImpair: '1'
+    numFinPair: '5'
+    numFinImpair: '5'
+    infosComplementaires: ''
+Logement:
+  Logement_1:
+    typeBatiment: 'Maison individuelle'
+    typeComplement: ''
+    valeurComplement: ''
+    infosComplementaires: ''
+    idAdresse: '3'
+  Logement_2:
+    typeBatiment: Immeuble
+    typeComplement: Batiment
+    valeurComplement: B
+    infosComplementaires: ''
+    idAdresse: '2'
+  Logement_3:
+    typeBatiment: 'Maison jumelée'
+    typeComplement: Porte
+    valeurComplement: Gauche
+    infosComplementaires: ''
+    idAdresse: '1'
+  Logement_4:
+    typeBatiment: 'Maison jumelée'
+    typeComplement: Porte
+    valeurComplement: Droite
+    infosComplementaires: ''
+    idAdresse: '1'
+  Logement_5:
+    typeBatiment: Immeuble
+    typeComplement: ''
+    valeurComplement: ''
+    infosComplementaires: 'Famille tartenpion'
+    idAdresse: '4'
+Archive:
+  Archive_1:
+    nomNaissance: -
+    nomUsage: -
+    prenoms: -
+    titre: -
+    sexe: Masculin
+    dateNaissance: '2009-04-03'
+    idVilleNaissance: '1'
+    situationFamiliale: Célibataire
+    codeRivoliAnt: '0'
+    numeroRueAnt: '0'
+    complementNumAnt: '0'
+    codeRivoliPost: '0'
+    numeroRuePost: '0'
+    complementNumPost: '0'
+    dateArchivage: '2012-05-01 15:16:00'
+    motifDepart: Mutation
+Secteur:
+  Secteur_1:
+    libelle: Volouise
+    idDecoupage: '1'
+Famille:
+  Famille_1:
+    nom: null
+    idLogement: '1'
+    infosComplementaires: ''
+  Famille_2:
+    nom: null
+    idLogement: '2'
+    infosComplementaires: ''
+  Famille_3:
+    nom: null
+    idLogement: '3'
+    infosComplementaires: 'Famille toto'
+Individu:
+  Individu_1:
+    nomNaissance: Nom
+    nomUsage: ''
+    prenoms: Toto
+    titre: Mr
+    sexe: Masculin
+    dateNaissance: '1989-02-03'
+    idVilleNaissance: '1'
+    situationFamiliale: Célibataire
+    chefFamille: true
+    profession: Chomeur
+    email: ''
+    idFamille: '1'
+    dateArrivee: '2014-08-16 14:17:00'
+  Individu_2:
+    nomNaissance: Nom
+    nomUsage: ''
+    prenoms: Toto2
+    titre: Mr
+    sexe: Masculin
+    dateNaissance: '2011-04-05'
+    idVilleNaissance: null
+    situationFamiliale: Célibataire
+    chefFamille: true
+    profession: Chomeur
+    email: null
+    idFamille: '1'
+    dateArrivee: '2015-09-18 15:15:00'
+TypeRue:
+  TypeRue_1:
+    libelle: Rue
+  TypeRue_2:
+    libelle: Avenue
+Rue:
+  Rue_1:
+    codeRivoli: TEST
+    nom: 'des pommiers'
+    motDirecteur: Pommiers
+    premierNumero: '1'
+    dernierNumero: '9999'
+    idTypeRue: '1'
+  Rue_2:
+    codeRivoli: TEST2
+    nom: bidon
+    motDirecteur: Bidon
+    premierNumero: '1'
+    dernierNumero: '50'
+    idTypeRue: '2'
+Adresse:
+  Adresse_1:
+    numeroRue: '1'
+    complement: BIS
+    nbLogementsMax: '2'
+    infosComplementaires: null
+    idRue: '1'
+  Adresse_2:
+    numeroRue: '2'
+    complement: ''
+    nbLogementsMax: '1'
+    infosComplementaires: null
+    idRue: '1'
+  Adresse_3:
+    numeroRue: '1'
+    complement: ''
+    nbLogementsMax: '1'
+    infosComplementaires: null
+    idRue: '2'
+  Adresse_4:
+    numeroRue: '3'
+    complement: ''
+    nbLogementsMax: '10'
+    infosComplementaires: null
+    idRue: '2'
+Utilisateur:
+  Utilisateur_1:
+    login: test
+    password: 68358d5d9cbbf39fe571ba41f26524b6
+    nom: Flament
+    prenom: Guillaume
+    etatCompte: Validé
+    typeUtilisateur: User
+  Utilisateur_2:
+    login: user
+    password: '68f32b5f0943904f5eac13096f25d756 '
+    nom: utilisateur
+    prenom: 'De base'
+    etatCompte: Validé
+    typeUtilisateur: User
+  Utilisateur_3:
+    login: admin
+    password: 0c7540eb7e65b553ec1ba6b20de79608
+    nom: Administrateur
+    prenom: 'De base'
+    etatCompte: Validé
+    typeUtilisateur: Admin
+Ville:
+  Ville_1:
+    CP: '1500'
+    Ville: Ambérieu-en-Bugey
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_2:
+    CP: '1330'
+    Ville: Ambérieux-en-Dombes
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_3:
+    CP: '1300'
+    Ville: Ambléon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_4:
+    CP: '1500'
+    Ville: Ambronay
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_5:
+    CP: '1500'
+    Ville: Ambutrix
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_6:
+    CP: '1300'
+    Ville: Andert-et-Condon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_7:
+    CP: '1350'
+    Ville: Anglefort
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_8:
+    CP: '1100'
+    Ville: Apremont
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_9:
+    CP: '1110'
+    Ville: Aranc
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_10:
+    CP: '1230'
+    Ville: Arandas
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_11:
+    CP: '1100'
+    Ville: Arbent
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_12:
+    CP: '1300'
+    Ville: Arbignieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_13:
+    CP: '1190'
+    Ville: Arbigny
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_14:
+    CP: '1230'
+    Ville: Argis
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_15:
+    CP: '1510'
+    Ville: Armix
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_16:
+    CP: '1480'
+    Ville: Ars-sur-Formans
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_17:
+    CP: '1510'
+    Ville: Artemare
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_18:
+    CP: '1570'
+    Ville: Asnières-sur-Saône
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_19:
+    CP: '1340'
+    Ville: Attignat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_20:
+    CP: '1380'
+    Ville: Bâgé-la-Ville
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_21:
+    CP: '1380'
+    Ville: Bâgé-le-Châtel
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_22:
+    CP: '1360'
+    Ville: Balan
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_23:
+    CP: '1990'
+    Ville: Baneins
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_24:
+    CP: '1270'
+    Ville: Beaupont
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_25:
+    CP: '1480'
+    Ville: Beauregard
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_26:
+    CP: '1360'
+    Ville: Béligneux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_27:
+    CP: '1200'
+    Ville: Bellegarde-sur-Valserine
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_28:
+    CP: '1300'
+    Ville: Belley
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_29:
+    CP: '1130'
+    Ville: Belleydoux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_30:
+    CP: '1100'
+    Ville: Bellignat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_31:
+    CP: '1260'
+    Ville: Belmont-Luthézieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_32:
+    CP: '1470'
+    Ville: Bénonces
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_33:
+    CP: '1370'
+    Ville: Bény
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_34:
+    CP: '1350'
+    Ville: Béon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_35:
+    CP: '1340'
+    Ville: Béréziat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_36:
+    CP: '1500'
+    Ville: Bettant
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_37:
+    CP: '1290'
+    Ville: Bey
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_38:
+    CP: '1700'
+    Ville: Beynost
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_39:
+    CP: '1200'
+    Ville: Billiat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_40:
+    CP: '1330'
+    Ville: Birieux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_41:
+    CP: '1290'
+    Ville: Biziat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_42:
+    CP: '1150'
+    Ville: Blyes
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_43:
+    CP: '1250'
+    Ville: Bohas-Meyriat-Rignat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_44:
+    CP: '1190'
+    Ville: Boissey
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_45:
+    CP: '1380'
+    Ville: Boissey
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_46:
+    CP: '1450'
+    Ville: Bolozon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_47:
+    CP: '1330'
+    Ville: Bouligneux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_48:
+    CP: '1000'
+    Ville: Bourg-en-Bresse
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_49:
+    CP: '1800'
+    Ville: Bourg-Saint-Christophe
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_50:
+    CP: '1640'
+    Ville: Boyeux-Saint-Jérôme
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_51:
+    CP: '1190'
+    Ville: Boz
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_52:
+    CP: '1300'
+    Ville: Brégnier-Cordon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_53:
+    CP: '1260'
+    Ville: Brénaz
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_54:
+    CP: '1110'
+    Ville: Brénod
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_55:
+    CP: '1300'
+    Ville: Brens
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_56:
+    CP: '1360'
+    Ville: Bressolles
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_57:
+    CP: '1460'
+    Ville: Brion
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_58:
+    CP: '1470'
+    Ville: Briord
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_59:
+    CP: '1310'
+    Ville: Buellas
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_60:
+    CP: '1430'
+    Ville: Ceignes
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_61:
+    CP: '1450'
+    Ville: Cerdon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_62:
+    CP: '1240'
+    Ville: Certines
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_63:
+    CP: '1170'
+    Ville: Cessy
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_64:
+    CP: '1250'
+    Ville: Ceyzériat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_65:
+    CP: '1350'
+    Ville: Ceyzérieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_66:
+    CP: '1320'
+    Ville: Chalamont
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_67:
+    CP: '1480'
+    Ville: Chaleins
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_68:
+    CP: '1230'
+    Ville: Chaley
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_69:
+    CP: '1450'
+    Ville: CHALLES
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_70:
+    CP: '1630'
+    Ville: Challex
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_71:
+    CP: '1260'
+    Ville: Champagne-en-Valromey
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_72:
+    CP: '1110'
+    Ville: Champdor
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_73:
+    CP: '1410'
+    Ville: Champfromier
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_74:
+    CP: '1420'
+    Ville: Chanay
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_75:
+    CP: '1590'
+    Ville: Chancia
+    Region: FRANCHE-COMTE
+    Departement: Jura
+    Pays: France
+  Ville_76:
+    CP: '1990'
+    Ville: Chaneins
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_77:
+    CP: '1400'
+    Ville: Chanoz-Châtenay
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_78:
+    CP: '1130'
+    Ville: Charix
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_79:
+    CP: '1800'
+    Ville: Charnoz-sur-Ain
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_80:
+    CP: '1500'
+    Ville: Château-Gaillard
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_81:
+    CP: '1320'
+    Ville: Châtenay
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_82:
+    CP: '1200'
+    Ville: Châtillon-en-Michaille
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_83:
+    CP: '1320'
+    Ville: Châtillon-la-Palud
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_84:
+    CP: '1400'
+    Ville: Châtillon-sur-Chalaronne
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_85:
+    CP: '1190'
+    Ville: Chavannes-sur-Reyssouze
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_86:
+    CP: '1250'
+    Ville: Chavannes-sur-Suran
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_87:
+    CP: '1660'
+    Ville: Chaveyriat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_88:
+    CP: '1510'
+    Ville: Chavornay
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_89:
+    CP: '1300'
+    Ville: Chazey-Bons
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_90:
+    CP: '1150'
+    Ville: Chazey-sur-Ain
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_91:
+    CP: '1510'
+    Ville: Cheignieu-la-Balme
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_92:
+    CP: '1430'
+    Ville: Chevillard
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_93:
+    CP: '1190'
+    Ville: Chevroux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_94:
+    CP: '1170'
+    Ville: Chevry
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_95:
+    CP: '1200'
+    Ville: Chézery-Forens
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_96:
+    CP: '1410'
+    Ville: Chézery-Forens
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_97:
+    CP: '1390'
+    Ville: Civrieux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_98:
+    CP: '1250'
+    Ville: Cize
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_99:
+    CP: '1230'
+    Ville: Cleyzieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_100:
+    CP: '1270'
+    Ville: Coligny
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_101:
+    CP: '1550'
+    Ville: Collonges
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_102:
+    CP: '1300'
+    Ville: Colomieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_103:
+    CP: '1230'
+    Ville: Conand
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_104:
+    CP: '1430'
+    Ville: Condamine
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_105:
+    CP: '1400'
+    Ville: Condeissiat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_106:
+    CP: '1200'
+    Ville: Confort
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_107:
+    CP: '1310'
+    Ville: Confrançon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_108:
+    CP: '1300'
+    Ville: Contrevoz
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_109:
+    CP: '1300'
+    Ville: Conzieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_110:
+    CP: '1420'
+    Ville: Corbonod
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_111:
+    CP: '1110'
+    Ville: Corcelles
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_112:
+    CP: '1110'
+    Ville: Corlier
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_113:
+    CP: '1110'
+    Ville: Cormaranche-en-Bugey
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_114:
+    CP: '1290'
+    Ville: Cormoranche-sur-Saône
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_115:
+    CP: '1560'
+    Ville: Cormoz
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_116:
+    CP: '1250'
+    Ville: Corveissiat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_117:
+    CP: '1370'
+    Ville: Courmangoux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_118:
+    CP: '1560'
+    Ville: Courtes
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_119:
+    CP: '1320'
+    Ville: Crans
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_120:
+    CP: '1340'
+    Ville: Cras-sur-Reyssouze
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_121:
+    CP: '1350'
+    Ville: Cressin-Rochefort
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_122:
+    CP: '1290'
+    Ville: Crottet
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_123:
+    CP: '1750'
+    Ville: Crottet
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_124:
+    CP: '1170'
+    Ville: Crozet
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_125:
+    CP: '1290'
+    Ville: Cruzilles-lès-Mépillat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_126:
+    CP: '1350'
+    Ville: Culoz
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_127:
+    CP: '1560'
+    Ville: Curciat-Dongalon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_128:
+    CP: '1310'
+    Ville: Curtafond
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_129:
+    CP: '1300'
+    Ville: Cuzieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_130:
+    CP: '1120'
+    Ville: Dagneux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_131:
+    CP: '1220'
+    Ville: Divonne-les-Bains
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_132:
+    CP: '1380'
+    Ville: Dommartin
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_133:
+    CP: '1400'
+    Ville: Dompierre-sur-Chalaronne
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_134:
+    CP: '1240'
+    Ville: Dompierre-sur-Veyle
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_135:
+    CP: '1270'
+    Ville: Domsure
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_136:
+    CP: '1590'
+    Ville: Dortan
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_137:
+    CP: '1500'
+    Ville: Douvres
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_138:
+    CP: '1250'
+    Ville: Drom
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_139:
+    CP: '1160'
+    Ville: Druillat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_140:
+    CP: '1130'
+    Ville: Échallon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_141:
+    CP: '1170'
+    Ville: Échenevex
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_142:
+    CP: '1200'
+    Ville: Éloise
+    Region: RHONE-ALPES
+    Departement: Haute-Savoie
+    Pays: France
+  Ville_143:
+    CP: '1340'
+    Ville: Étrez
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_144:
+    CP: '1230'
+    Ville: Évosges
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_145:
+    CP: '1800'
+    Ville: Faramans
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_146:
+    CP: '1480'
+    Ville: Fareins
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_147:
+    CP: '1550'
+    Ville: Farges
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_148:
+    CP: '1570'
+    Ville: Feillens
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_149:
+    CP: '1210'
+    Ville: Ferney-Voltaire
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_150:
+    CP: '1350'
+    Ville: Flaxieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_151:
+    CP: '1340'
+    Ville: Foissiat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_152:
+    CP: '1090'
+    Ville: Francheleins
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_153:
+    CP: '1480'
+    Ville: Frans
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_154:
+    CP: '1140'
+    Ville: Garnerans
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_155:
+    CP: '1090'
+    Ville: Genouilleux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_156:
+    CP: '1100'
+    Ville: Géovreisset
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_157:
+    CP: '1460'
+    Ville: GEOVREISSIAT
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_158:
+    CP: '1250'
+    Ville: Germagnat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_159:
+    CP: '1170'
+    Ville: Gex
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_160:
+    CP: '1130'
+    Ville: Giron
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_161:
+    CP: '1190'
+    Ville: Gorrevod
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_162:
+    CP: '1250'
+    Ville: Grand-Corent
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_163:
+    CP: '1290'
+    Ville: Grièges
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_164:
+    CP: '1220'
+    Ville: Grilly
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_165:
+    CP: '1100'
+    Ville: Groissiat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_166:
+    CP: '1680'
+    Ville: Groslée
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_167:
+    CP: '1090'
+    Ville: Guéreins
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_168:
+    CP: '1250'
+    Ville: Hautecourt-Romanèche
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_169:
+    CP: '1110'
+    Ville: Hauteville-Lompnes
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_170:
+    CP: '1110'
+    Ville: HOSTIAS
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_171:
+    CP: '1260'
+    Ville: Hotonnes
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_172:
+    CP: '1140'
+    Ville: Illiat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_173:
+    CP: '1200'
+    Ville: Injoux-Génissiat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_174:
+    CP: '1680'
+    Ville: Innimond
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_175:
+    CP: '1430'
+    Ville: Izenave
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_176:
+    CP: '1580'
+    Ville: Izernore
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_177:
+    CP: '1300'
+    Ville: Izieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_178:
+    CP: '1480'
+    Ville: Jassans-Riottier
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_179:
+    CP: '1250'
+    Ville: Jasseron
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_180:
+    CP: '1340'
+    Ville: Jayat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_181:
+    CP: '1250'
+    Ville: Journans
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_182:
+    CP: '1800'
+    Ville: Joyeux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_183:
+    CP: '1640'
+    Ville: Jujurieux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_184:
+    CP: '1400'
+    Ville: Abergement-Clémenciat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_185:
+    CP: '1640'
+    Ville: Abergement-de-Varey
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_186:
+    CP: '1120'
+    Ville: Boisse
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_187:
+    CP: '1510'
+    Ville: Burbanche
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_188:
+    CP: '1240'
+    Ville: Chapelle-du-Châtelard
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_189:
+    CP: '1160'
+    Ville: Tranclière
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_190:
+    CP: '1450'
+    Ville: Labalme
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_191:
+    CP: '1150'
+    Ville: Lagnieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_192:
+    CP: '1290'
+    Ville: Laiz
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_193:
+    CP: '1410'
+    Ville: Lajoux
+    Region: FRANCHE-COMTE
+    Departement: Jura
+    Pays: France
+  Ville_194:
+    CP: '1130'
+    Ville: Lalleyriat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_195:
+    CP: '1200'
+    Ville: Lancrans
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_196:
+    CP: '1430'
+    Ville: Lantenay
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_197:
+    CP: '1330'
+    Ville: Lapeyrouse
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_198:
+    CP: '1590'
+    Ville: Lavancia-Epercy
+    Region: FRANCHE-COMTE
+    Departement: Jura
+    Pays: France
+  Ville_199:
+    CP: '1350'
+    Ville: Lavours
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_200:
+    CP: '1260'
+    Ville: Grand-Abergement
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_201:
+    CP: '1800'
+    Ville: Montellier
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_202:
+    CP: '1260'
+    Ville: Petit-Abergement
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_203:
+    CP: '1330'
+    Ville: Plantay
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_204:
+    CP: '1130'
+    Ville: Poizat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_205:
+    CP: '1200'
+    Ville: Léaz
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_206:
+    CP: '1410'
+    Ville: Lélex
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_207:
+    CP: '1240'
+    Ville: Lent
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_208:
+    CP: '1130'
+    Ville: Neyrolles
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_209:
+    CP: '1560'
+    Ville: Lescheroux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_210:
+    CP: '1150'
+    Ville: Leyment
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_211:
+    CP: '1450'
+    Ville: Leyssard
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_212:
+    CP: '1420'
+    Ville: Lhôpital
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_213:
+    CP: '1680'
+    Ville: Lhuis
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_214:
+    CP: '1260'
+    Ville: Lochieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_215:
+    CP: '1680'
+    Ville: Lompnas
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_216:
+    CP: '1260'
+    Ville: Lompnieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_217:
+    CP: '1360'
+    Ville: Loyettes
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_218:
+    CP: '1090'
+    Ville: Lurcy
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_219:
+    CP: '1300'
+    Ville: Magnieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_220:
+    CP: '1430'
+    Ville: Maillat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_221:
+    CP: '1340'
+    Ville: Malafretaz
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_222:
+    CP: '1560'
+    Ville: Mantenay-Montlin
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_223:
+    CP: '1570'
+    Ville: Manziat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_224:
+    CP: '1851'
+    Ville: Marboz
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_225:
+    CP: '1680'
+    Ville: Marchamp
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_226:
+    CP: '1300'
+    Ville: Marignieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_227:
+    CP: '1240'
+    Ville: Marlieux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_228:
+    CP: '1340'
+    Ville: Marsonnas
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_229:
+    CP: '1100'
+    Ville: Martignat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_230:
+    CP: '1600'
+    Ville: Massieux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_231:
+    CP: '1300'
+    Ville: Massignieu-de-Rives
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_232:
+    CP: '1580'
+    Ville: Matafelon-Granges
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_233:
+    CP: '1370'
+    Ville: Meillonnas
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_234:
+    CP: '1450'
+    Ville: Mérignat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_235:
+    CP: '1480'
+    Ville: Messimy-sur-Saône
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_236:
+    CP: '1800'
+    Ville: Meximieux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_237:
+    CP: '1660'
+    Ville: Mézériat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_238:
+    CP: '1170'
+    Ville: Mijoux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_239:
+    CP: '1410'
+    Ville: Mijoux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_240:
+    CP: '1390'
+    Ville: Mionnay
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_241:
+    CP: '1700'
+    Ville: Miribel
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_242:
+    CP: '1600'
+    Ville: Misérieux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_243:
+    CP: '1140'
+    Ville: Mogneneins
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_244:
+    CP: '1250'
+    Ville: Montagnat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_245:
+    CP: '1470'
+    Ville: Montagnieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_246:
+    CP: '1200'
+    Ville: Montanges
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_247:
+    CP: '1090'
+    Ville: Montceaux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_248:
+    CP: '1310'
+    Ville: Montcet
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_249:
+    CP: '1390'
+    Ville: Monthieux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_250:
+    CP: '1120'
+    Ville: Montluel
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_251:
+    CP: '1090'
+    Ville: Montmerle-sur-Saône
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_252:
+    CP: '1310'
+    Ville: Montracol
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_253:
+    CP: '1460'
+    Ville: Montréal-la-Cluse
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_254:
+    CP: '1340'
+    Ville: Montrevel-en-Bresse
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_255:
+    CP: '1300'
+    Ville: Murs-et-Gélignieux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_256:
+    CP: '1460'
+    Ville: Nantua
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_257:
+    CP: '1130'
+    Ville: Nantua
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_258:
+    CP: '1300'
+    Ville: Nattages
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_259:
+    CP: '1400'
+    Ville: Neuville-les-Dames
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_260:
+    CP: '1160'
+    Ville: Neuville-sur-Ain
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_261:
+    CP: '1700'
+    Ville: Neyron
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_262:
+    CP: '1120'
+    Ville: Niévroz
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_263:
+    CP: '1230'
+    Ville: Nivollet-Montgriffon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_264:
+    CP: '1460'
+    Ville: Nurieux-Volognat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_265:
+    CP: '1230'
+    Ville: Oncieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_266:
+    CP: '1510'
+    Ville: Ordonnaz
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_267:
+    CP: '1210'
+    Ville: Ornex
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_268:
+    CP: '1430'
+    Ville: Outriaz
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_269:
+    CP: '1100'
+    Ville: Oyonnax
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_270:
+    CP: '1190'
+    Ville: Ozan
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_271:
+    CP: '1600'
+    Ville: Parcieux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_272:
+    CP: '1300'
+    Ville: Parves
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_273:
+    CP: '1630'
+    Ville: Péron
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_274:
+    CP: '1960'
+    Ville: Péronnas
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_275:
+    CP: '1800'
+    Ville: Pérouges
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_276:
+    CP: '1540'
+    Ville: Perrex
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_277:
+    CP: '1430'
+    Ville: Peyriat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_278:
+    CP: '1300'
+    Ville: Peyrieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_279:
+    CP: '1140'
+    Ville: Peyzieux-sur-Saône
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_280:
+    CP: '1270'
+    Ville: Pirajoux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_281:
+    CP: '1120'
+    Ville: Pizay
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_282:
+    CP: '1130'
+    Ville: Plagne
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_283:
+    CP: '1310'
+    Ville: Polliat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_284:
+    CP: '1350'
+    Ville: Pollieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_285:
+    CP: '1450'
+    Ville: Poncin
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_286:
+    CP: '1160'
+    Ville: 'Pont-d''Ain'
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_287:
+    CP: '1190'
+    Ville: Pont-de-Vaux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_288:
+    CP: '1290'
+    Ville: Pont-de-Veyle
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_289:
+    CP: '1460'
+    Ville: Port
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_290:
+    CP: '1550'
+    Ville: Pougny
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_291:
+    CP: '1250'
+    Ville: Pouillat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_292:
+    CP: '1300'
+    Ville: Prémeyzel
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_293:
+    CP: '1110'
+    Ville: Prémillieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_294:
+    CP: '1510'
+    Ville: Prémillieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_295:
+    CP: '1370'
+    Ville: Pressiat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_296:
+    CP: '1280'
+    Ville: Prévessin-Moëns
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_297:
+    CP: '1160'
+    Ville: Priay
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_298:
+    CP: '1510'
+    Ville: Pugieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_299:
+    CP: '1250'
+    Ville: Ramasse
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_300:
+    CP: '1390'
+    Ville: Rancé
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_301:
+    CP: '1990'
+    Ville: Relevant
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_302:
+    CP: '1750'
+    Ville: Replonges
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_303:
+    CP: '1250'
+    Ville: Revonnas
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_304:
+    CP: '1600'
+    Ville: Reyrieux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_305:
+    CP: '1190'
+    Ville: Reyssouze
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_306:
+    CP: '1800'
+    Ville: Rignieux-le-Franc
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_307:
+    CP: '1400'
+    Ville: Romans
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_308:
+    CP: '1510'
+    Ville: Rossillon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_309:
+    CP: '1260'
+    Ville: Ruffieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_310:
+    CP: '1270'
+    Ville: Salavre
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_311:
+    CP: '1580'
+    Ville: Samognat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_312:
+    CP: '1400'
+    Ville: Sandrans
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_313:
+    CP: '1150'
+    Ville: Sault-Brénaz
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_314:
+    CP: '1220'
+    Ville: Sauverny
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_315:
+    CP: '1480'
+    Ville: Savigneux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_316:
+    CP: '1170'
+    Ville: Ségny
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_317:
+    CP: '1470'
+    Ville: Seillonnaz
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_318:
+    CP: '1630'
+    Ville: Sergy
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_319:
+    CP: '1190'
+    Ville: Sermoyer
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_320:
+    CP: '1470'
+    Ville: Serrières-de-Briord
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_321:
+    CP: '1450'
+    Ville: Serrières-sur-Ain
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_322:
+    CP: '1960'
+    Ville: Servas
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_323:
+    CP: '1560'
+    Ville: Servignat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_324:
+    CP: '1420'
+    Ville: Seyssel
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_325:
+    CP: '1250'
+    Ville: Simandre-sur-Suran
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_326:
+    CP: '1260'
+    Ville: Songieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_327:
+    CP: '1580'
+    Ville: Sonthonnax-la-Montagne
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_328:
+    CP: '1150'
+    Ville: Souclin
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_329:
+    CP: '1450'
+    Ville: Saint-Alban
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_330:
+    CP: '1290'
+    Ville: 'Saint-André-d''Huiriat'
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_331:
+    CP: '1380'
+    Ville: Saint-André-de-Bâgé
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_332:
+    CP: '1390'
+    Ville: Saint-André-de-Corcy
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_333:
+    CP: '1240'
+    Ville: Saint-André-le-Bouchoux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_334:
+    CP: '1960'
+    Ville: Saint-André-sur-Vieux-Jonc
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_335:
+    CP: '1190'
+    Ville: Saint-Bénigne
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_336:
+    CP: '1300'
+    Ville: Saint-Benoît
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_337:
+    CP: '1600'
+    Ville: Saint-Bernard
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_338:
+    CP: '1300'
+    Ville: Saint-Bois
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_339:
+    CP: '1300'
+    Ville: Saint-Champ
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_340:
+    CP: '1380'
+    Ville: Saint-Cyr-sur-Menthon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_341:
+    CP: '1500'
+    Ville: Saint-Denis-en-Bugey
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_342:
+    CP: '1000'
+    Ville: Saint-Denis-lès-Bourg
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_343:
+    CP: '1340'
+    Ville: 'Saint-Didier-d''Aussiat'
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_344:
+    CP: '1600'
+    Ville: Saint-Didier-de-Formans
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_345:
+    CP: '1140'
+    Ville: Saint-Didier-sur-Chalaronne
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_346:
+    CP: '1800'
+    Ville: Saint-Éloi
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_347:
+    CP: '1370'
+    Ville: Saint-Étienne-du-Bois
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_348:
+    CP: '1140'
+    Ville: Saint-Étienne-sur-Chalaronne
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_349:
+    CP: '1190'
+    Ville: Saint-Étienne-sur-Reyssouze
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_350:
+    CP: '1630'
+    Ville: Saint-Genis-Pouilly
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_351:
+    CP: '1380'
+    Ville: Saint-Genis-sur-Menthon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_352:
+    CP: '1400'
+    Ville: Saint-Georges-sur-Renon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_353:
+    CP: '1130'
+    Ville: Saint-Germain-de-Joux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_354:
+    CP: '1300'
+    Ville: Saint-Germain-les-Paroisses
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_355:
+    CP: '1240'
+    Ville: Saint-Germain-sur-Renon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_356:
+    CP: '1630'
+    Ville: Saint-Jean-de-Gonville
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_357:
+    CP: '1800'
+    Ville: Saint-Jean-de-Niost
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_358:
+    CP: '1390'
+    Ville: Saint-Jean-de-Thurigneux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_359:
+    CP: '1640'
+    Ville: Saint-Jean-le-Vieux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_360:
+    CP: '1560'
+    Ville: Saint-Jean-sur-Reyssouze
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_361:
+    CP: '1290'
+    Ville: Saint-Jean-sur-Veyle
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_362:
+    CP: '1560'
+    Ville: Saint-Julien-sur-Reyssouze
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_363:
+    CP: '1540'
+    Ville: Saint-Julien-sur-Veyle
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_364:
+    CP: '1250'
+    Ville: Saint-Just
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_365:
+    CP: '1750'
+    Ville: Saint-Laurent-sur-Saône
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_366:
+    CP: '1390'
+    Ville: Saint-Marcel
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_367:
+    CP: '1510'
+    Ville: Saint-Martin-de-Bavel
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_368:
+    CP: '1430'
+    Ville: Saint-Martin-du-Frêne
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_369:
+    CP: '1160'
+    Ville: Saint-Martin-du-Mont
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_370:
+    CP: '1310'
+    Ville: Saint-Martin-le-Châtel
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_371:
+    CP: '1700'
+    Ville: Saint-Maurice-de-Beynost
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_372:
+    CP: '1800'
+    Ville: Saint-Maurice-de-Gourdans
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_373:
+    CP: '1500'
+    Ville: Saint-Maurice-de-Rémens
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_374:
+    CP: '1560'
+    Ville: Saint-Nizier-le-Bouchoux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_375:
+    CP: '1320'
+    Ville: Saint-Nizier-le-Désert
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_376:
+    CP: '1240'
+    Ville: Saint-Paul-de-Varax
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_377:
+    CP: '1230'
+    Ville: Saint-Rambert-en-Bugey
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_378:
+    CP: '1310'
+    Ville: Saint-Rémy
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_379:
+    CP: '1150'
+    Ville: Saint-Sorlin-en-Bugey
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_380:
+    CP: '1340'
+    Ville: Saint-Sulpice
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_381:
+    CP: '1560'
+    Ville: Saint-Trivier-de-Courtes
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_382:
+    CP: '1990'
+    Ville: Saint-Trivier-sur-Moignans
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_383:
+    CP: '1150'
+    Ville: Saint-Vulbas
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_384:
+    CP: '1120'
+    Ville: Sainte-Croix
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_385:
+    CP: '1600'
+    Ville: Sainte-Euphémie
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_386:
+    CP: '1150'
+    Ville: Sainte-Julie
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_387:
+    CP: '1330'
+    Ville: Sainte-Olive
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_388:
+    CP: '1400'
+    Ville: Sulignat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_389:
+    CP: '1420'
+    Ville: Surjoux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_390:
+    CP: '1260'
+    Ville: Sutrieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_391:
+    CP: '1510'
+    Ville: Talissieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_392:
+    CP: '1230'
+    Ville: Tenay
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_393:
+    CP: '1110'
+    Ville: Thézillieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_394:
+    CP: '1120'
+    Ville: Thil
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_395:
+    CP: '1710'
+    Ville: Thoiry
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_396:
+    CP: '1140'
+    Ville: Thoissey
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_397:
+    CP: '1230'
+    Ville: Torcieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_398:
+    CP: '1250'
+    Ville: Tossiat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_399:
+    CP: '1600'
+    Ville: Toussieux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_400:
+    CP: '1390'
+    Ville: Tramoyes
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_401:
+    CP: '1370'
+    Ville: Treffort-Cuisiat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_402:
+    CP: '1600'
+    Ville: Trévoux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_403:
+    CP: '1140'
+    Ville: Valeins
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_404:
+    CP: '1660'
+    Ville: Vandeins
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_405:
+    CP: '1160'
+    Ville: Varambon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_406:
+    CP: '1150'
+    Ville: Vaux-en-Bugey
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_407:
+    CP: '1270'
+    Ville: Verjon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_408:
+    CP: '1560'
+    Ville: Vernoux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_409:
+    CP: '1330'
+    Ville: Versailleux
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_410:
+    CP: '1210'
+    Ville: Versonnex
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_411:
+    CP: '1170'
+    Ville: Vesancy
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_412:
+    CP: '1560'
+    Ville: Vescours
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_413:
+    CP: '1570'
+    Ville: Vésines
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_414:
+    CP: '1260'
+    Ville: Vieu
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_415:
+    CP: '1430'
+    Ville: 'Vieu-d''Izenave'
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_416:
+    CP: '1330'
+    Ville: Villars-les-Dombes
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_417:
+    CP: '1150'
+    Ville: Villebois
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_418:
+    CP: '1270'
+    Ville: Villemotier
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_419:
+    CP: '1480'
+    Ville: Villeneuve
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_420:
+    CP: '1250'
+    Ville: Villereversure
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_421:
+    CP: '1200'
+    Ville: Villes
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_422:
+    CP: '1320'
+    Ville: Villette-sur-Ain
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_423:
+    CP: '1800'
+    Ville: Villieu-Loyes-Mollon
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_424:
+    CP: '1440'
+    Ville: Viriat
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_425:
+    CP: '1510'
+    Ville: Virieu-le-Grand
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_426:
+    CP: '1260'
+    Ville: Virieu-le-Petit
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_427:
+    CP: '1300'
+    Ville: Virignin
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_428:
+    CP: '1350'
+    Ville: Vongnes
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_429:
+    CP: '1540'
+    Ville: Vonnas
+    Region: RHONE-ALPES
+    Departement: Ain
+    Pays: France
+  Ville_430:
+    CP: '2300'
+    Ville: Abbécourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_431:
+    CP: '2800'
+    Ville: Achery
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_432:
+    CP: '2200'
+    Ville: Acy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_433:
+    CP: '2340'
+    Ville: Agnicourt-et-Séchelles
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_434:
+    CP: '2190'
+    Ville: Aguilcourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_435:
+    CP: '2110'
+    Ville: Aisonville-et-Bernoville
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_436:
+    CP: '2820'
+    Ville: Aizelles
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_437:
+    CP: '2370'
+    Ville: Aizy-Jouy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_438:
+    CP: '2240'
+    Ville: Alaincourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_439:
+    CP: '2320'
+    Ville: Allemant
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_440:
+    CP: '2290'
+    Ville: Ambleny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_441:
+    CP: '2200'
+    Ville: Ambrief
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_442:
+    CP: '2190'
+    Ville: Amifontaine
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_443:
+    CP: '2700'
+    Ville: Amigny-Rouy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_444:
+    CP: '2600'
+    Ville: Ancienville
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_445:
+    CP: '2800'
+    Ville: Andelain
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_446:
+    CP: '2800'
+    Ville: Anguilcourt-le-Sart
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_447:
+    CP: '2320'
+    Ville: Anizy-le-Château
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_448:
+    CP: '2480'
+    Ville: Annois
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_449:
+    CP: '2500'
+    Ville: Any-Martin-Rieux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_450:
+    CP: '2360'
+    Ville: Archon
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_451:
+    CP: '2130'
+    Ville: Arcy-Sainte-Restitue
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_452:
+    CP: '2210'
+    Ville: Armentières-sur-Ourcq
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_453:
+    CP: '2860'
+    Ville: Arrancy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_454:
+    CP: '2480'
+    Ville: Artemps
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_455:
+    CP: '2330'
+    Ville: Artonges
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_456:
+    CP: '2270'
+    Ville: Assis-sur-Serre
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_457:
+    CP: '2840'
+    Ville: Athies-sous-Laon
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_458:
+    CP: '2490'
+    Ville: Attilly
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_459:
+    CP: '2420'
+    Ville: Aubencheul-aux-Bois
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_460:
+    CP: '2500'
+    Ville: Aubenton
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_461:
+    CP: '2590'
+    Ville: Aubigny-aux-Kaisnes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_462:
+    CP: '2820'
+    Ville: Aubigny-en-Laonnois
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_463:
+    CP: '2300'
+    Ville: Audignicourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_464:
+    CP: '2120'
+    Ville: Audigny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_465:
+    CP: '2220'
+    Ville: Augy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_466:
+    CP: '2000'
+    Ville: Aulnois-sous-Laon
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_467:
+    CP: '2250'
+    Ville: Autremencourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_468:
+    CP: '2580'
+    Ville: Autreppes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_469:
+    CP: '2300'
+    Ville: Autreville
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_470:
+    CP: '2400'
+    Ville: Azy-sur-Marne
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_471:
+    CP: '2290'
+    Ville: Bagneux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_472:
+    CP: '2140'
+    Ville: Bancigny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_473:
+    CP: '2000'
+    Ville: Barenton-Bugny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_474:
+    CP: '2000'
+    Ville: Barenton-Cel
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_475:
+    CP: '2270'
+    Ville: Barenton-sur-Serre
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_476:
+    CP: '2700'
+    Ville: Barisis
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_477:
+    CP: '2170'
+    Ville: Barzy-en-Thiérache
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_478:
+    CP: '2850'
+    Ville: Barzy-sur-Marne
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_479:
+    CP: '2380'
+    Ville: Bassoles-Aulers
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_480:
+    CP: '2330'
+    Ville: Baulne-en-Brie
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_481:
+    CP: '2220'
+    Ville: Bazoches-sur-Vesles
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_482:
+    CP: '2500'
+    Ville: Beaumé
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_483:
+    CP: '2300'
+    Ville: Beaumont-en-Beine
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_484:
+    CP: '2110'
+    Ville: Beaurevoir
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_485:
+    CP: '2160'
+    Ville: Beaurieux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_486:
+    CP: '2800'
+    Ville: Beautor
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_487:
+    CP: '2590'
+    Ville: Beauvois-en-Vermandois
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_488:
+    CP: '2110'
+    Ville: Becquigny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_489:
+    CP: '2400'
+    Ville: Belleau
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_490:
+    CP: '2420'
+    Ville: Bellenglise
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_491:
+    CP: '2200'
+    Ville: Belleu
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_492:
+    CP: '2420'
+    Ville: Bellicourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_493:
+    CP: '2440'
+    Ville: Benay
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_494:
+    CP: '2450'
+    Ville: Bergues-sur-Sambre
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_495:
+    CP: '2250'
+    Ville: Berlancourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_496:
+    CP: '2340'
+    Ville: Berlise
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_497:
+    CP: '2120'
+    Ville: Bernot
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_498:
+    CP: '2290'
+    Ville: Berny-Rivière
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_499:
+    CP: '2820'
+    Ville: Berrieux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_500:
+    CP: '2190'
+    Ville: Berry-au-Bac
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_501:
+    CP: '2800'
+    Ville: Bertaucourt-Epourdon
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_502:
+    CP: '2240'
+    Ville: Berthenicourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_503:
+    CP: '2190'
+    Ville: Bertricourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_504:
+    CP: '2200'
+    Ville: Berzy-le-Sec
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_505:
+    CP: '2300'
+    Ville: Besmé
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_506:
+    CP: '2500'
+    Ville: Besmont
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_507:
+    CP: '2870'
+    Ville: Besny-et-Loizy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_508:
+    CP: '2300'
+    Ville: Béthancourt-en-Vaux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_509:
+    CP: '2210'
+    Ville: Beugneux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_510:
+    CP: '2130'
+    Ville: Beuvardes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_511:
+    CP: '2310'
+    Ville: Bézu-le-Guéry
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_512:
+    CP: '2400'
+    Ville: Bézu-Saint-Germain
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_513:
+    CP: '2300'
+    Ville: Bichancourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_514:
+    CP: '2290'
+    Ville: Bieuxy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_515:
+    CP: '2860'
+    Ville: Bièvres
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_516:
+    CP: '2200'
+    Ville: Billy-sur-Aisne
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_517:
+    CP: '2210'
+    Ville: Billy-sur-Ourcq
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_518:
+    CP: '2160'
+    Ville: Blanzy-lès-Fismes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_519:
+    CP: '2300'
+    Ville: Blérancourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_520:
+    CP: '2400'
+    Ville: Blesmes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_521:
+    CP: '2110'
+    Ville: Bohain-en-Vermandois
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_522:
+    CP: '2270'
+    Ville: Bois-lès-Pargny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_523:
+    CP: '2350'
+    Ville: Boncourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_524:
+    CP: '2400'
+    Ville: Bonneil
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_525:
+    CP: '2400'
+    Ville: Bonnesvalyn
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_526:
+    CP: '2420'
+    Ville: Bony
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_527:
+    CP: '2250'
+    Ville: Bosmont-sur-Serre
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_528:
+    CP: '2860'
+    Ville: Bouconville-Vauclair
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_529:
+    CP: '2450'
+    Ville: Boué
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_530:
+    CP: '2160'
+    Ville: Bouffignereux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_531:
+    CP: '2400'
+    Ville: Bouresches
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_532:
+    CP: '2160'
+    Ville: Bourg-et-Comin
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_533:
+    CP: '2300'
+    Ville: Bourguignon-sous-Coucy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_534:
+    CP: '2000'
+    Ville: Bourguignon-sous-Montbavin
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_535:
+    CP: '2220'
+    Ville: Braine
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_536:
+    CP: '2320'
+    Ville: Brancourt-en-Laonnois
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_537:
+    CP: '2110'
+    Ville: Brancourt-le-Grand
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_538:
+    CP: '2400'
+    Ville: Brasles
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_539:
+    CP: '2480'
+    Ville: Bray-Saint-Christophe
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_540:
+    CP: '2000'
+    Ville: Braye-en-Laonnois
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_541:
+    CP: '2140'
+    Ville: Braye-en-Thiérache
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_542:
+    CP: '2880'
+    Ville: 'BRAYE SOUS CLAMECY'
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_543:
+    CP: '2210'
+    Ville: Brécy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_544:
+    CP: '2220'
+    Ville: Brenelle
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_545:
+    CP: '2210'
+    Ville: Breny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_546:
+    CP: '2870'
+    Ville: Brie
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_547:
+    CP: '2240'
+    Ville: Brissay-Choigny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_548:
+    CP: '2240'
+    Ville: Brissy-Hamégicourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_549:
+    CP: '2810'
+    Ville: Brumetz
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_550:
+    CP: '2360'
+    Ville: Brunehamel
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_551:
+    CP: '2860'
+    Ville: Bruyères-et-Montbérault
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_552:
+    CP: '2130'
+    Ville: Bruyères-sur-Fère
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_553:
+    CP: '2220'
+    Ville: Bruys
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_554:
+    CP: '2500'
+    Ville: Bucilly
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_555:
+    CP: '2880'
+    Ville: Bucy-le-Long
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_556:
+    CP: '2870'
+    Ville: Bucy-lès-Cerny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_557:
+    CP: '2350'
+    Ville: Bucy-lès-Pierrepont
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_558:
+    CP: '2500'
+    Ville: Buire
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_559:
+    CP: '2620'
+    Ville: Buironfosse
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_560:
+    CP: '2140'
+    Ville: Burelles
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_561:
+    CP: '2810'
+    Ville: Bussiares
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_562:
+    CP: '2200'
+    Ville: Buzancy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_563:
+    CP: '2300'
+    Ville: Caillouël-Crépigny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_564:
+    CP: '2300'
+    Ville: Camelin
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_565:
+    CP: '2680'
+    Ville: Castres
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_566:
+    CP: '2490'
+    Ville: Caulaincourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_567:
+    CP: '2300'
+    Ville: Caumont
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_568:
+    CP: '2330'
+    Ville: Celles-lès-Condé
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_569:
+    CP: '2370'
+    Ville: Celles-sur-Aisne
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_570:
+    CP: '2240'
+    Ville: Cerizy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_571:
+    CP: '2860'
+    Ville: Cerny-en-Laonnois
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_572:
+    CP: '2870'
+    Ville: Cerny-lès-Bucy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_573:
+    CP: '2220'
+    Ville: Cerseuil
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_574:
+    CP: '2320'
+    Ville: Cessières
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_575:
+    CP: '2200'
+    Ville: Chacrise
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_576:
+    CP: '2000'
+    Ville: Chaillevois
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_577:
+    CP: '2270'
+    Ville: Chalandry
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_578:
+    CP: '2000'
+    Ville: Chambry
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_579:
+    CP: '2860'
+    Ville: Chamouille
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_580:
+    CP: '2670'
+    Ville: Champs
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_581:
+    CP: '2340'
+    Ville: Chaourse
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_582:
+    CP: '2310'
+    Ville: CHARLY
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_583:
+    CP: '2800'
+    Ville: Charmes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_584:
+    CP: '2400'
+    Ville: Chartèves
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_585:
+    CP: '2370'
+    Ville: Chassemy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_586:
+    CP: '2400'
+    Ville: Château-Thierry
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_587:
+    CP: '2270'
+    Ville: Châtillon-lès-Sons
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_588:
+    CP: '2240'
+    Ville: Châtillon-sur-Oise
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_589:
+    CP: '2160'
+    Ville: Chaudardes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_590:
+    CP: '2200'
+    Ville: Chaudun
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_591:
+    CP: '2300'
+    Ville: Chauny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_592:
+    CP: '2000'
+    Ville: Chavignon
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_593:
+    CP: '2880'
+    Ville: Chavigny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_594:
+    CP: '2370'
+    Ville: Chavonne
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_595:
+    CP: '2860'
+    Ville: Chérêt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_596:
+    CP: '2860'
+    Ville: Chermizy-Ailles
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_597:
+    CP: '2220'
+    Ville: Chéry-Chartreuve
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_598:
+    CP: '2000'
+    Ville: Chéry-lès-Pouilly
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_599:
+    CP: '2360'
+    Ville: Chéry-lès-Rozoy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_600:
+    CP: '2250'
+    Ville: Chevennes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_601:
+    CP: '2000'
+    Ville: Chevregny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_602:
+    CP: '2270'
+    Ville: Chevresis-Monceau
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_603:
+    CP: '2810'
+    Ville: Chézy-en-Orxois
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_604:
+    CP: '2570'
+    Ville: Chézy-sur-Marne
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_605:
+    CP: '2400'
+    Ville: Chierry
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_606:
+    CP: '2120'
+    Ville: Chigny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_607:
+    CP: '2350'
+    Ville: Chivres-en-Laonnois
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_608:
+    CP: '2880'
+    Ville: Chivres-Val
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_609:
+    CP: '2000'
+    Ville: Chivy-lès-Étouvelles
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_610:
+    CP: '2210'
+    Ville: Chouy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_611:
+    CP: '2130'
+    Ville: Cierges
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_612:
+    CP: '2250'
+    Ville: Cilly
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_613:
+    CP: '2220'
+    Ville: Ciry-Salsogne
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_614:
+    CP: '2000'
+    Ville: Clacy-et-Thierret
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_615:
+    CP: '2260'
+    Ville: Clairfontaine
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_616:
+    CP: '2880'
+    Ville: Clamecy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_617:
+    CP: '2440'
+    Ville: Clastres
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_618:
+    CP: '2340'
+    Ville: Clermont-les-Fermes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_619:
+    CP: '2600'
+    Ville: Coeuvres-et-Valsery
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_620:
+    CP: '2210'
+    Ville: Coincy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_621:
+    CP: '2360'
+    Ville: Coingt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_622:
+    CP: '2860'
+    Ville: Colligis-Crandelain
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_623:
+    CP: '2120'
+    Ville: Colonfay
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_624:
+    CP: '2300'
+    Ville: Commenchon
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_625:
+    CP: '2160'
+    Ville: Concevreux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_626:
+    CP: '2330'
+    Ville: Condé-en-Brie
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_627:
+    CP: '2370'
+    Ville: Condé-sur-Aisne
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_628:
+    CP: '2190'
+    Ville: Condé-sur-Suippe
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_629:
+    CP: '2700'
+    Ville: Condren
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_630:
+    CP: '2330'
+    Ville: Connigis
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_631:
+    CP: '2680'
+    Ville: Contescourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_632:
+    CP: '2820'
+    Ville: Corbeny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_633:
+    CP: '2600'
+    Ville: Corcy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_634:
+    CP: '2380'
+    Ville: Coucy-la-Ville
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_635:
+    CP: '2380'
+    Ville: Coucy-le-Château-Auffrique
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_636:
+    CP: '2840'
+    Ville: Coucy-lès-Eppes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_637:
+    CP: '2130'
+    Ville: Coulonges-Cohan
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_638:
+    CP: '2310'
+    Ville: Coupru
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_639:
+    CP: '2800'
+    Ville: Courbes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_640:
+    CP: '2330'
+    Ville: Courboin
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_641:
+    CP: '2220'
+    Ville: 'COURCELLES SUR VESLES'
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_642:
+    CP: '2810'
+    Ville: Courchamps
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_643:
+    CP: '2200'
+    Ville: Courmelles
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_644:
+    CP: '2130'
+    Ville: Courmont
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_645:
+    CP: '2850'
+    Ville: Courtemont-Varennes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_646:
+    CP: '2820'
+    Ville: Courtrizy-et-Fussigny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_647:
+    CP: '2220'
+    Ville: Couvrelles
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_648:
+    CP: '2270'
+    Ville: Couvron-et-Aumencourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_649:
+    CP: '2600'
+    Ville: Coyolles
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_650:
+    CP: '2130'
+    Ville: Cramaille
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_651:
+    CP: '2160'
+    Ville: Craonne
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_652:
+    CP: '2160'
+    Ville: Craonnelle
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_653:
+    CP: '2380'
+    Ville: Crécy-au-Mont
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_654:
+    CP: '2270'
+    Ville: Crécy-sur-Serre
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_655:
+    CP: '2870'
+    Ville: Crépy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_656:
+    CP: '2650'
+    Ville: Crézancy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_657:
+    CP: '2110'
+    Ville: Croix-Fonsommes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_658:
+    CP: '2310'
+    Ville: Crouttes-sur-Marne
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_659:
+    CP: '2880'
+    Ville: Crouy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_660:
+    CP: '2120'
+    Ville: Crupilly
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_661:
+    CP: '2880'
+    Ville: Cuffies
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_662:
+    CP: '2480'
+    Ville: Cugny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_663:
+    CP: '2350'
+    Ville: Cuirieux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_664:
+    CP: '2220'
+    Ville: Cuiry-Housse
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_665:
+    CP: '2160'
+    Ville: Cuiry-lès-Chaudardes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_666:
+    CP: '2360'
+    Ville: Cuiry-lès-Iviers
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_667:
+    CP: '2160'
+    Ville: Cuissy-et-Geny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_668:
+    CP: '2200'
+    Ville: Cuisy-en-Almont
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_669:
+    CP: '2600'
+    Ville: Cutry
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_670:
+    CP: '2220'
+    Ville: Cys-la-Commune
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_671:
+    CP: '2140'
+    Ville: Dagny-Lambercy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_672:
+    CP: '2680'
+    Ville: Dallon
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_673:
+    CP: '2470'
+    Ville: Dammard
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_674:
+    CP: '2600'
+    Ville: Dampleux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_675:
+    CP: '2800'
+    Ville: Danizy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_676:
+    CP: '2270'
+    Ville: Dercy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_677:
+    CP: '2700'
+    Ville: Deuillet
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_678:
+    CP: '2220'
+    Ville: Dhuizel
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_679:
+    CP: '2340'
+    Ville: Dizy-le-Gros
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_680:
+    CP: '2360'
+    Ville: Dohis
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_681:
+    CP: '2360'
+    Ville: Dolignon
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_682:
+    CP: '2600'
+    Ville: Dommiers
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_683:
+    CP: '2310'
+    Ville: Domptin
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_684:
+    CP: '2450'
+    Ville: Dorengt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_685:
+    CP: '2590'
+    Ville: Douchy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_686:
+    CP: '2130'
+    Ville: Dravegny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_687:
+    CP: '2210'
+    Ville: Droizy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_688:
+    CP: '2480'
+    Ville: Dury
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_689:
+    CP: '2350'
+    Ville: Ébouleau
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_690:
+    CP: '2500'
+    Ville: Effry
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_691:
+    CP: '2260'
+    Ville: Englancourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_692:
+    CP: '2290'
+    Ville: Épagny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_693:
+    CP: '2500'
+    Ville: Éparcy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_694:
+    CP: '2400'
+    Ville: Épaux-Bézu
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_695:
+    CP: '2400'
+    Ville: Épieds
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_696:
+    CP: '2840'
+    Ville: Eppes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_697:
+    CP: '2250'
+    Ville: Erlon
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_698:
+    CP: '2260'
+    Ville: Erloy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_699:
+    CP: '2170'
+    Ville: Esquéhéries
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_700:
+    CP: '2690'
+    Ville: Essigny-le-Grand
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_701:
+    CP: '2100'
+    Ville: Essigny-le-Petit
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_702:
+    CP: '2570'
+    Ville: Essises
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_703:
+    CP: '2400'
+    Ville: Essômes-sur-Marne
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_704:
+    CP: '2420'
+    Ville: Estrées
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_705:
+    CP: '2400'
+    Ville: Étampes-sur-Marne
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_706:
+    CP: '2110'
+    Ville: Étaves-et-Bocquiaux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_707:
+    CP: '2000'
+    Ville: Étouvelles
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_708:
+    CP: '2580'
+    Ville: Étréaupont
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_709:
+    CP: '2590'
+    Ville: Étreillers
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_710:
+    CP: '2400'
+    Ville: Étrépilly
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_711:
+    CP: '2510'
+    Ville: Étreux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_712:
+    CP: '2190'
+    Ville: Évergnicourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_713:
+    CP: '2320'
+    Ville: Faucoucourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_714:
+    CP: '2600'
+    Ville: Faverolles
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_715:
+    CP: '2100'
+    Ville: Fayet
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_716:
+    CP: '2130'
+    Ville: Fère-en-Tardenois
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_717:
+    CP: '2450'
+    Ville: Fesmy-le-Sart
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_718:
+    CP: '2840'
+    Ville: Festieux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_719:
+    CP: '2110'
+    Ville: Fieulaine
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_720:
+    CP: '2000'
+    Ville: Filain
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_721:
+    CP: '2120'
+    Ville: Flavigny-le-Grand-et-Beaurain
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_722:
+    CP: '2520'
+    Ville: Flavy-le-Martel
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_723:
+    CP: '2600'
+    Ville: Fleury
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_724:
+    CP: '2590'
+    Ville: Fluquières
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_725:
+    CP: '2670'
+    Ville: Folembray
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_726:
+    CP: '2110'
+    Ville: Fonsommes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_727:
+    CP: '2680'
+    Ville: Fontaine-lès-Clercs
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_728:
+    CP: '2140'
+    Ville: Fontaine-lès-Vervins
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_729:
+    CP: '2110'
+    Ville: Fontaine-Notre-Dame
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_730:
+    CP: '2110'
+    Ville: Fontaine-Uterte
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_731:
+    CP: '2170'
+    Ville: Fontenelle
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_732:
+    CP: '2540'
+    Ville: Fontenelle-en-Brie
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_733:
+    CP: '2290'
+    Ville: Fontenoy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_734:
+    CP: '2590'
+    Ville: Foreste
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_735:
+    CP: '2650'
+    Ville: Fossoy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_736:
+    CP: '2870'
+    Ville: Fourdrain
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_737:
+    CP: '2760'
+    Ville: Francilly-Selency
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_738:
+    CP: '2140'
+    Ville: Franqueville
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_739:
+    CP: '2380'
+    Ville: Fresnes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_740:
+    CP: '2130'
+    Ville: Fresnes-en-Tardenois
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_741:
+    CP: '2230'
+    Ville: Fresnoy-le-Grand
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_742:
+    CP: '2800'
+    Ville: Fressancourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_743:
+    CP: '2700'
+    Ville: Frières-Faillouël
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_744:
+    CP: '2260'
+    Ville: Froidestrées
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_745:
+    CP: '2270'
+    Ville: Froidmont-Cohartille
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_746:
+    CP: '2810'
+    Ville: Gandelu
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_747:
+    CP: '2430'
+    Ville: Gauchy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_748:
+    CP: '2140'
+    Ville: Gercy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_749:
+    CP: '2260'
+    Ville: Gergny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_750:
+    CP: '2590'
+    Ville: Germaine
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_751:
+    CP: '2160'
+    Ville: Gernicourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_752:
+    CP: '2440'
+    Ville: Gibercourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_753:
+    CP: '2350'
+    Ville: Gizy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_754:
+    CP: '2400'
+    Ville: Gland
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_755:
+    CP: '2160'
+    Ville: Glennes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_756:
+    CP: '2820'
+    Ville: Goudelancourt-lès-Berrieux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_757:
+    CP: '2350'
+    Ville: Goudelancourt-lès-Pierrepont
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_758:
+    CP: '2130'
+    Ville: Goussancourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_759:
+    CP: '2420'
+    Ville: Gouy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_760:
+    CP: '2210'
+    Ville: Grand-Rozoy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_761:
+    CP: '2120'
+    Ville: Grand-Verly
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_762:
+    CP: '2350'
+    Ville: Grandlup-et-Fay
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_763:
+    CP: '2360'
+    Ville: Grandrieux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_764:
+    CP: '2100'
+    Ville: Gricourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_765:
+    CP: '2210'
+    Ville: Grisolles
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_766:
+    CP: '2140'
+    Ville: Gronard
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_767:
+    CP: '2110'
+    Ville: Grougis
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_768:
+    CP: '2680'
+    Ville: Grugies
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_769:
+    CP: '2190'
+    Ville: Guignicourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_770:
+    CP: '2120'
+    Ville: Guise
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_771:
+    CP: '2300'
+    Ville: Guivry
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_772:
+    CP: '2300'
+    Ville: Guny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_773:
+    CP: '2160'
+    Ville: Guyencourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_774:
+    CP: '2510'
+    Ville: Hannapes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_775:
+    CP: '2480'
+    Ville: Happencourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_776:
+    CP: '2600'
+    Ville: Haramont
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_777:
+    CP: '2140'
+    Ville: Harcigny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_778:
+    CP: '2420'
+    Ville: Hargicourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_779:
+    CP: '2100'
+    Ville: Harly
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_780:
+    CP: '2210'
+    Ville: Hartennes-et-Taux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_781:
+    CP: '2140'
+    Ville: Hary
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_782:
+    CP: '2810'
+    Ville: Hautevesnes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_783:
+    CP: '2120'
+    Ville: Hauteville
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_784:
+    CP: '2140'
+    Ville: Haution
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_785:
+    CP: '2440'
+    Ville: Hinacourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_786:
+    CP: '2500'
+    Ville: Hirson
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_787:
+    CP: '2760'
+    Ville: Holnon
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_788:
+    CP: '2720'
+    Ville: Homblières
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_789:
+    CP: '2140'
+    Ville: Houry
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_790:
+    CP: '2250'
+    Ville: Housset
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_791:
+    CP: '2510'
+    Ville: Iron
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_792:
+    CP: '2240'
+    Ville: Itancourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_793:
+    CP: '2360'
+    Ville: Iviers
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_794:
+    CP: '2850'
+    Ville: Jaulgonne
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_795:
+    CP: '2490'
+    Ville: Jeancourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_796:
+    CP: '2140'
+    Ville: Jeantes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_797:
+    CP: '2420'
+    Ville: Joncourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_798:
+    CP: '2220'
+    Ville: Jouaignes
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_799:
+    CP: '2380'
+    Ville: Jumencourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_800:
+    CP: '2160'
+    Ville: Jumigny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_801:
+    CP: '2480'
+    Ville: Jussy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_802:
+    CP: '2880'
+    Ville: Juvigny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_803:
+    CP: '2190'
+    Ville: Juvincourt-et-Damary
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_804:
+    CP: '2540'
+    Ville: Épine-aux-Bois
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_805:
+    CP: '2140'
+    Ville: Bouteille
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_806:
+    CP: '2260'
+    Ville: Capelle
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_807:
+    CP: '2540'
+    Ville: Celle-sous-Montmirail
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_808:
+    CP: '2330'
+    Ville: Chapelle-Monthodon
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_809:
+    CP: '2570'
+    Ville: Chapelle-sur-Chézy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_810:
+    CP: '2210'
+    Ville: Croix-sur-Ourcq
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_811:
+    CP: '2800'
+    Ville: Fère
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_812:
+    CP: '2270'
+    Ville: Ferté-Chevresis
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_813:
+    CP: '2460'
+    Ville: Ferté-Milon
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_814:
+    CP: '2260'
+    Ville: Flamengrie
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_815:
+    CP: '2500'
+    Ville: Hérie
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_816:
+    CP: '2190'
+    Ville: Malmaison
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_817:
+    CP: '2250'
+    Ville: Neuville-Bosmont
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_818:
+    CP: '2300'
+    Ville: Neuville-en-Beine
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_819:
+    CP: '2250'
+    Ville: Neuville-Housset
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_820:
+    CP: '2450'
+    Ville: Neuville-lès-Dorengt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_821:
+    CP: '2150'
+    Ville: Selve
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_822:
+    CP: '2140'
+    Ville: Vallée-au-Blé
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_823:
+    CP: '2110'
+    Ville: Vallée-Mulâtre
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_824:
+    CP: '2340'
+    Ville: Ville-aux-Bois-lès-Dizy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_825:
+    CP: '2160'
+    Ville: Ville-aux-Bois-lès-Pontavert
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_826:
+    CP: '2880'
+    Ville: Laffaux
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_827:
+    CP: '2140'
+    Ville: Laigny
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_828:
+    CP: '2590'
+    Ville: Lanchy
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_829:
+    CP: '2120'
+    Ville: Landifay-et-Bertaignemont
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_830:
+    CP: '2140'
+    Ville: Landouzy-la-Cour
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_831:
+    CP: '2140'
+    Ville: Landouzy-la-Ville
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_832:
+    CP: '2380'
+    Ville: Landricourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_833:
+    CP: '2000'
+    Ville: Laniscourt
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_834:
+    CP: '2000'
+    Ville: Laon
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_835:
+    CP: '2150'
+    Ville: Lappion
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France
+  Ville_836:
+    CP: '2600'
+    Ville: Largny-sur-Automne
+    Region: PICARDIE
+    Departement: Aisne
+    Pays: France

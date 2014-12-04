@@ -1,0 +1,190 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: user, action: accueil }
+
+# generic rules
+# please, remove them by adding more specific rules
+#default_index:
+#  url:   /:module
+#  param: { action: index }
+
+default:
+  url:   /:module/:action/*
+
+# -------------------------------------------------------------------
+#      R O U T E S   P O U R   L' A U T O C O M P L E T I O N
+# -------------------------------------------------------------------
+ajax_getVilles:
+  url:   /ajax_getVilles
+  param:  { module: individu, action: getVilles }
+
+ajax_getFamilles:
+  url:   /ajax_getFamilles
+  param:  { module: individu, action: getFamilles }
+  
+ajax_getLogements:
+  url:   /ajax_getLogements
+  param:  { module: famille, action: getLogements }
+# -------------------------------------------------------------------
+
+
+# -------------------------------------------------------------------
+#         R O U T E S   P O U R   L' A P P L I C A T I O N
+# -------------------------------------------------------------------
+# Routes pour les individus
+Individu:
+  url: /individu
+  param: { module: individu, action: index }
+
+Individu_search:
+  url: /individu_recherche
+  param: { module: individu, action: search }
+
+Individu_search2:
+  url: /individu_recherche2
+  param: { module: individu, action: search2 }
+
+Individu_result:
+  url: /individu_resultatRecherche
+  param: { module: individu, action: result }
+
+
+Individu_result2:
+  url: /individu_resultatRecherche2
+  param: { module: individu, action: result2 }
+
+Individu_exportResults:
+  url: /individu_exportationResultats
+  param: { module: individu, action: exportIndividus }
+
+
+Individu_exportResults2:
+  url: /individu_exportationResultats2
+  param: { module: individu, action: exportIndividus2 }
+  
+Individu_radiation:
+  url: /individu_radiation
+  param: { module: individu, action: radiation }
+  
+Individu_archivageRad:
+  url: /individu_arch_rad
+  param: { module: individu, action: archivageRad }
+ 
+Individu_archivageMut:
+  url: /individu_arch_mut
+  param: { module: individu, action: archivageMut }
+
+# Routes pour les familles
+Famille:
+  url: /famille
+  param: { module: famille, action: index }
+
+Famille_search:
+  url: /famille_recherche
+  param: { module: famille, action: search }
+
+Famille_result:
+  url: /famille_resultatRecherche
+  param: { module: famille, action: result }
+
+
+# Routes pour les logements
+Logement:
+  url: /logement
+  param: { module: logement, action: index }
+  
+Logement_search:
+  url: /logement_recherche
+  param: { module: logement, action: search }
+  
+Logement_result:
+  url: /logement_resultatRecherche
+  param: { module: logement, action: result }
+  
+
+# Routes pour les adresses
+Adresse:
+  url: /adresse
+  param: { module: adresse, action: index }
+
+  #route recherche vers les adresses (paccalet add)
+Adresse_search:
+  url: /adresse_recherche
+  param: { module: adresse, action: search }
+  
+
+Adresse_result:
+  url: /adresse_resultatRecherche
+  param: { module: adresse, action: result }
+  
+  
+# Routes pour les rues
+Rue:
+  url: /rue
+  param: { module: rue, action: index }
+
+# Routes pour les tronçons
+Troncon:
+  url: /troncon
+  param: { module: troncon, action: index }
+
+# Routes pour les secteurs
+Secteur:
+  url: /secteur
+  param: { module: secteur, action: index }
+  
+Secteur_ExportSecteurs:
+  url: /secteur_ExportSecteurs
+  param: { module: secteur, action: ExportSecteurs }
+  
+# Routes pour les découpages
+Decoupage:
+  url: /decoupage
+  param: { module: decoupage, action: index }
+  
+Decoupage_ExportDecoupageSecteur:
+  url: /decoupage_ExportDecoupageSecteur
+  param: { module: decoupage, action: ExportDecoupageSecteur }
+  
+
+# Routes pour les archives
+Archive:
+  url: /archive
+  param: { module: archive, action: index }
+  
+Archive_search:
+  url: /archive_recherche
+  param: { module: archive, action: search }
+
+Archive_result:
+  url: /archive_resultatRecherche
+  param: { module: archive, action: result }
+  
+Archive_exportResults:
+  url: /archive_exportationResultats
+  param: { module: archive, action: exportArchives}
+
+# Routes pour les users
+Login:
+  url: /login
+  param: { module: user, action: index }
+
+Logout:
+  url: /logout
+  param: { module: user, action: logout }
+
+Accueil:
+  url: /accueil
+  param: { module: user, action: accueil }
+  
+Statistiques:
+  url: /statistiques
+  param: { module: user, action: stats }
+
+#Administration:
+#  url: /backend
+#  param: { module: utilisateur, action: index }

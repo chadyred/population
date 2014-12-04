@@ -1,0 +1,47 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/04-Settings
+
+prod:
+  .settings:
+    no_script_name:         true
+    logging_enabled:        false
+    # ligne suivante non présente d'origine
+    #cache:                  false
+
+dev:
+  .settings:
+    error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
+    #web_debug:              true
+    web_debug:              false
+    cache:                  false
+    #no_script_name:         false
+    #-- le no script name à false permet de rester sur _dev.php
+    #no_script_name:         true
+    no_script_name:         false
+    etag:                   false
+
+test:
+  .settings:
+    error_reporting:        <?php echo ((E_ALL | E_STRICT) ^ E_NOTICE)."\n" ?>
+    cache:                  false
+    web_debug:              false
+    no_script_name:         false
+    etag:                   false
+
+all:
+  .settings:
+    # Form security secret (CSRF protection)
+    csrf_secret:            8196acb2d28877cf6d0a878358262d8d3fa97fd1
+
+    # Output escaping settings
+    escaping_strategy:      true
+    escaping_method:        ESC_SPECIALCHARS
+
+    # Enable the database manager
+    use_database:           true
+
+  .actions:
+    login_module:           user
+    login_action:           index
+    secure_module:          user
+    secure_action:          secure

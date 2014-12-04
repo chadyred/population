@@ -1,0 +1,61 @@
+ville:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Ville
+    module:               ville
+    prefix_path:          /ville
+    column:               id
+    with_wildcard_routes: true
+
+type_rue:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                TypeRue
+    module:               typeRue
+    prefix_path:          /typeRue
+    column:               id
+    with_wildcard_routes: true
+
+utilisateur:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Utilisateur
+    module:               utilisateur
+    prefix_path:          /utilisateur
+    column:               id
+    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: user, action: accueil }
+
+# generic rules
+# please, remove them by adding more specific rules
+#default_index:
+#  url:   /:module
+#  param: { action: index }
+
+default:
+  url:   /:module/:action/*
+
+# Routes pour les users
+Login:
+  url: /login
+  param: { module: user, action: index }
+
+Logout:
+  url: /logout
+  param: { module: user, action: logout }
+
+Accueil:
+  url: /accueil
+  param: { module: user, action: accueil }
+
+PasswordGenerator:
+  url: /genererMotDePasse
+  param: { module: utilisateur, action: pwdGenerator }
+

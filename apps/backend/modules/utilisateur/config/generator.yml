@@ -1,0 +1,28 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Utilisateur
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          utilisateur
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Liste des utilisateurs
+      filter:  ~
+      form:    ~
+      edit:
+        title: Modification de l'utilisateur "%%login%%"
+      new:
+        title: Nouvel Utilisateur
+        fields:
+          password:    { label: "Password - à générer avec l'outil" }
+      config:
+
